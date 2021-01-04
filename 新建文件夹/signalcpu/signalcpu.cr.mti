@@ -1,0 +1,63 @@
+D:/signalcpu/Alu.v {1 {vlog -work work -vopt D:/signalcpu/Alu.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module Alu
+
+Top level modules:
+	Alu
+
+} {} {}} D:/signalcpu/mips_tb.v {1 {vlog -work work -vopt D:/signalcpu/mips_tb.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module Mips_tb
+
+Top level modules:
+	Mips_tb
+
+} {} {}} D:/signalcpu/IM.v {1 {vlog -work work -vopt D:/signalcpu/IM.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module IM
+
+Top level modules:
+	IM
+
+} {} {}} D:/signalcpu/Extender.v {1 {vlog -work work -vopt D:/signalcpu/Extender.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module Extender
+
+Top level modules:
+	Extender
+
+} {} {}} D:/signalcpu/DMem.v {1 {vlog -work work -vopt D:/signalcpu/DMem.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module DMem
+
+Top level modules:
+	DMem
+
+} {} {}} D:/signalcpu/PcUnit.v {1 {vlog -work work -vopt D:/signalcpu/PcUnit.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module PcUnit
+
+Top level modules:
+	PcUnit
+
+} {} {}} D:/signalcpu/instruction_def.v {1 {vlog -work work -vopt D:/signalcpu/instruction_def.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+
+} {} {}} D:/signalcpu/ctrl_encode_def.v {1 {vlog -work work -vopt D:/signalcpu/ctrl_encode_def.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+
+} {} {}} D:/signalcpu/GPR.v {1 {vlog -work work -vopt D:/signalcpu/GPR.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module GPR
+
+Top level modules:
+	GPR
+
+} {} {}} D:/signalcpu/Mips.v {1 {vlog -work work -vopt D:/signalcpu/Mips.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module Mips
+
+Top level modules:
+	Mips
+
+} {} {}}

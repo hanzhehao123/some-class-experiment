@@ -1,0 +1,142 @@
+E:/cpu/project2/MEMWB.v {1 {vlog -work work -vopt E:/cpu/project2/MEMWB.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module MEMWB
+
+Top level modules:
+	MEMWB
+
+} {} {}} E:/cpu/project2/mips.v {1 {vlog -work work -vopt E:/cpu/project2/mips.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module mips
+
+Top level modules:
+	mips
+
+} {} {}} E:/cpu/project2/dm.v {1 {vlog -work work -vopt E:/cpu/project2/dm.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module dm_4k
+
+Top level modules:
+	dm_4k
+
+} {} {}} E:/cpu/project2/PC.v {1 {vlog -work work -vopt E:/cpu/project2/PC.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module PC
+
+Top level modules:
+	PC
+
+} {} {}} E:/cpu/project2/IR.v {1 {vlog -work work -vopt E:/cpu/project2/IR.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module IR
+
+Top level modules:
+	IR
+
+} {} {}} E:/cpu/project2/mips_tb.v {1 {vlog -work work -vopt E:/cpu/project2/mips_tb.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module mips_tb
+
+Top level modules:
+	mips_tb
+
+} {} {}} E:/cpu/project2/global_def.v {1 {vlog -work work -vopt E:/cpu/project2/global_def.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+
+} {} {}} E:/cpu/project2/RF.v {1 {vlog -work work -vopt E:/cpu/project2/RF.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module RF
+
+Top level modules:
+	RF
+
+} {} {}} E:/cpu/project2/ctrl_encode_def.v {1 {vlog -work work -vopt E:/cpu/project2/ctrl_encode_def.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+
+} {} {}} E:/cpu/project2/instruction_def.v {1 {vlog -work work -vopt E:/cpu/project2/instruction_def.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+
+} {} {}} E:/cpu/project2/EXT.v {1 {vlog -work work -vopt E:/cpu/project2/EXT.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module EXT
+
+Top level modules:
+	EXT
+
+} {} {}} E:/cpu/project2/Hazard.v {0 {vlog -work work -vopt E:/cpu/project2/Hazard.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module Hazard
+** Error: E:/cpu/project2/Hazard.v(73): (vlog-2730) Undefined variable: 'StallTwo'.
+
+** Error: E:/cpu/project2/Hazard.v(73): LHS in procedural continuous assignment may not be a net: StallTwo.
+
+} {4.0 5.0 6.0 7.0} {}} E:/cpu/project2/IDEX.v {1 {vlog -work work -vopt E:/cpu/project2/IDEX.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module IDEX
+
+Top level modules:
+	IDEX
+
+} {} {}} E:/cpu/project2/mux.v {1 {vlog -work work -vopt E:/cpu/project2/mux.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module mux2
+-- Compiling module mux4
+-- Compiling module mux8
+-- Compiling module mux16
+
+Top level modules:
+	mux2
+	mux4
+	mux8
+	mux16
+
+} {} {}} E:/cpu/project2/alu.v {1 {vlog -work work -vopt E:/cpu/project2/alu.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}} E:/cpu/project2/Forwarding.v {1 {vlog -work work -vopt E:/cpu/project2/Forwarding.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module Forwarding
+
+Top level modules:
+	Forwarding
+
+} {} {}} E:/cpu/project2/flopr.v {1 {vlog -work work -vopt E:/cpu/project2/flopr.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module flopr
+
+Top level modules:
+	flopr
+
+} {} {}} E:/cpu/project2/IFID.v {1 {vlog -work work -vopt E:/cpu/project2/IFID.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module IFID
+
+Top level modules:
+	IFID
+
+} {} {}} E:/cpu/project2/EXMEM.v {1 {vlog -work work -vopt E:/cpu/project2/EXMEM.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module EXMEM
+
+Top level modules:
+	EXMEM
+
+} {} {}} E:/cpu/project2/Ctrl.v {1 {vlog -work work -vopt E:/cpu/project2/Ctrl.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module Ctrl
+
+Top level modules:
+	Ctrl
+
+} {} {}} E:/cpu/project2/im.v {1 {vlog -work work -vopt E:/cpu/project2/im.v
+Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+-- Compiling module IM
+
+Top level modules:
+	IM
+
+} {} {}}

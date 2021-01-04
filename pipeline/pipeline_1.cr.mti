@@ -1,0 +1,148 @@
+C:/Users/Administrator/Desktop/pipeline/mux.v {1 {vlog -work work -vopt -stats=none C:/Users/Administrator/Desktop/pipeline/mux.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module mux2
+-- Compiling module mux3
+-- Compiling module mux4
+-- Compiling module mux8
+-- Compiling module mux16
+
+Top level modules:
+	mux2
+	mux3
+	mux4
+	mux8
+	mux16
+
+} {} {}} C:/Users/Administrator/Desktop/pipeline/Alu.v {1 {vlog -work work -vopt -stats=none C:/Users/Administrator/Desktop/pipeline/Alu.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Alu
+
+Top level modules:
+	Alu
+
+} {} {}} C:/Users/Administrator/Desktop/pipeline/IDEX.v {1 {vlog -work work -vopt -stats=none C:/Users/Administrator/Desktop/pipeline/IDEX.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module IDEX
+
+Top level modules:
+	IDEX
+
+} {} {}} C:/Users/Administrator/Desktop/pipeline/MEM_Forward.v {1 {vlog -work work -vopt -stats=none C:/Users/Administrator/Desktop/pipeline/MEM_Forward.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module MEM_Forward
+
+Top level modules:
+	MEM_Forward
+
+} {} {}} C:/Users/Administrator/Desktop/pipeline/DMem.v {1 {vlog -work work -vopt -stats=none C:/Users/Administrator/Desktop/pipeline/DMem.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module DMem
+
+Top level modules:
+	DMem
+
+} {} {}} C:/Users/Administrator/Desktop/pipeline/EXMEM.v {1 {vlog -work work -vopt -stats=none C:/Users/Administrator/Desktop/pipeline/EXMEM.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module EXMEM
+
+Top level modules:
+	EXMEM
+
+} {} {}} C:/Users/Administrator/Desktop/pipeline/IFID.v {1 {vlog -work work -vopt -stats=none C:/Users/Administrator/Desktop/pipeline/IFID.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module IFID
+
+Top level modules:
+	IFID
+
+} {} {}} C:/Users/Administrator/Desktop/pipeline/Ctrl.v {1 {vlog -work work -vopt -stats=none C:/Users/Administrator/Desktop/pipeline/Ctrl.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Ctrl
+
+Top level modules:
+	Ctrl
+
+} {} {}} C:/Users/Administrator/Desktop/pipeline/IM.v {1 {vlog -work work -vopt -stats=none C:/Users/Administrator/Desktop/pipeline/IM.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module IM
+
+Top level modules:
+	IM
+
+} {} {}} C:/Users/Administrator/Desktop/pipeline/Extender.v {1 {vlog -work work -vopt -stats=none C:/Users/Administrator/Desktop/pipeline/Extender.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Extender
+
+Top level modules:
+	Extender
+
+} {} {}} C:/Users/Administrator/Desktop/pipeline/MEMWB.v {1 {vlog -work work -vopt -stats=none C:/Users/Administrator/Desktop/pipeline/MEMWB.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module MEMWB
+
+Top level modules:
+	MEMWB
+
+} {} {}} C:/Users/Administrator/Desktop/pipeline/Mips.v {1 {vlog -work work -vopt -stats=none C:/Users/Administrator/Desktop/pipeline/Mips.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Mips
+
+Top level modules:
+	Mips
+
+} {} {}} C:/Users/Administrator/Desktop/pipeline/EX_Forward.v {1 {vlog -work work -vopt -stats=none C:/Users/Administrator/Desktop/pipeline/EX_Forward.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module EX_Forward
+
+Top level modules:
+	EX_Forward
+
+} {} {}} C:/Users/Administrator/Desktop/pipeline/GPR.v {1 {vlog -work work -vopt -stats=none C:/Users/Administrator/Desktop/pipeline/GPR.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module GPR
+
+Top level modules:
+	GPR
+
+} {} {}} C:/Users/Administrator/Desktop/pipeline/ID_Forward.v {1 {vlog -work work -vopt -stats=none C:/Users/Administrator/Desktop/pipeline/ID_Forward.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ID_Forward
+
+Top level modules:
+	ID_Forward
+
+} {} {}} C:/Users/Administrator/Desktop/pipeline/PcUnit.v {1 {vlog -work work -vopt -stats=none C:/Users/Administrator/Desktop/pipeline/PcUnit.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module PcUnit
+
+Top level modules:
+	PcUnit
+
+} {} {}} C:/Users/Administrator/Desktop/pipeline/mips_tb.v {1 {vlog -work work -vopt -stats=none C:/Users/Administrator/Desktop/pipeline/mips_tb.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Mips_tb
+
+Top level modules:
+	Mips_tb
+
+} {} {}} C:/Users/Administrator/Desktop/pipeline/STALL.v {1 {vlog -work work -vopt -stats=none C:/Users/Administrator/Desktop/pipeline/STALL.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Stall
+
+Top level modules:
+	Stall
+
+} {} {}} C:/Users/Administrator/Desktop/pipeline/instruction_def.v {1 {vlog -work work -vopt -stats=none C:/Users/Administrator/Desktop/pipeline/instruction_def.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+
+} {} {}} C:/Users/Administrator/Desktop/pipeline/WBIF.v {1 {vlog -work work -vopt -stats=none C:/Users/Administrator/Desktop/pipeline/WBIF.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module WBIF
+
+Top level modules:
+	WBIF
+
+} {} {}} C:/Users/Administrator/Desktop/pipeline/ctrl_encode_def.v {1 {vlog -work work -vopt -stats=none C:/Users/Administrator/Desktop/pipeline/ctrl_encode_def.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+
+} {} {}}
