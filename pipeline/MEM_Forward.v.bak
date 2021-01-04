@@ -1,0 +1,26 @@
+module MEM_Forward(MEM_rt,WB_WeSel,WB_RegWrite/*,WBIF_WeSel,WBIF_RegWrite*/�?,MEM_Forward);
+
+	input[4:0]		MEM_rt;
+	input[4:0]		WB_WeSel;
+	input			WB_RegWrite;
+	/*input[4:0]		WBIF_WeSel;
+	input			WBIF_RegWrite;*/
+	
+	output reg[1:0]	MEM_Forward;
+	
+	always@(MEM_rt or WB_WeSel or WB_RegWrite/* or WBIF_RegWrite or WBIF_WeSel*/)
+	begin
+		MEM_Forward = 2'b00;
+		
+		//MEM MEM
+		//下一条指令要写的寄存器是当前指令写存储器的来源寄存器
+		if (WB_RegWrite && (WB_WeSel != 0) && (WB_WeSel == MEM_rt))
+			MEM_Forward = 2'b10;
+		
+		//下下条指令要写的寄存器是当前指令写存储器的来源寄存器
+	/*	if (WBIF_RegWrite && (WBIF_WeSel != 0) && (WBIF_WeSel == MEM_rt))
+			MEM_Forward = 2'b01;*/
+		
+	end
+	
+endmodule

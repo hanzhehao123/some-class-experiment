@@ -1,0 +1,183 @@
+m255
+K3
+13
+cModel Technology
+dD:\AAA
+T_opt
+V90_hBi0c6W6FGA6KYTHAB1
+04 7 4 work Mips_tb fast 0
+=1-b083fe75ef60-5aa38a04-3b9-8b8
+o-quiet -auto_acc_if_foreign -work work +acc
+n@_opt
+OE;O;10.1a;51
+vAlu
+V?`flSzUJLS?40z9VEJ9kI0
+r1
+31
+I8kbYIXGRTXWUi_Y=nX?C72
+Z0 dD:\signalcpu
+Z1 w1416292469
+8D:/signalcpu/Alu.v
+FD:/signalcpu/Alu.v
+L0 3
+Z2 OE;L;10.1a;51
+Z3 o-work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+n@alu
+!i10b 1
+!s85 0
+!s100 N:fifc=D2?WhXCP]dJENK3
+!s90 -reportprogress|300|-work|work|-vopt|D:/signalcpu/Alu.v|
+!s108 1520664972.046000
+!s107 D:/signalcpu/Alu.v|
+vCtrl
+V0k;EVgl^gh;OlEz]k7Y651
+r1
+31
+I^ekVbjkf>MEM[LBW6ZHO;1
+Z4 dD:\signalcpu
+R1
+8D:/signalcpu/Ctrl.v
+FD:/signalcpu/Ctrl.v
+L0 3
+R2
+R3
+n@ctrl
+!i10b 1
+!s85 0
+!s100 HS;dl8QM0]J6b9`WG5_G=3
+!s90 -reportprogress|300|-work|work|-vopt|D:/signalcpu/Ctrl.v|
+!s108 1520664972.171000
+!s107 D:/signalcpu/Ctrl.v|
+vDMem
+V^mZ^EWooLeaQ==S>2P?g;0
+r1
+31
+IUMal`^:Ja2UNA<be^o_SN1
+R4
+w1520663833
+8D:/signalcpu/DMem.v
+FD:/signalcpu/DMem.v
+L0 2
+R2
+R3
+n@d@mem
+!i10b 1
+!s85 0
+!s100 B795XgZ2:bM>dZSTZzc4W2
+!s90 -reportprogress|300|-work|work|-vopt|D:/signalcpu/DMem.v|
+!s108 1520664972.281000
+!s107 D:/signalcpu/DMem.v|
+vExtender
+VP>HclNBOS>_zV`BdjgnLn1
+r1
+31
+IdV2L_ZJdhn2oK>f796Q9a0
+R4
+w1417248255
+8D:/signalcpu/Extender.v
+FD:/signalcpu/Extender.v
+L0 2
+R2
+R3
+n@extender
+!i10b 1
+!s85 0
+!s100 QgnQd4M59hYcEYiXoBMY`3
+!s90 -reportprogress|300|-work|work|-vopt|D:/signalcpu/Extender.v|
+!s108 1520664972.375000
+!s107 D:/signalcpu/Extender.v|
+vGPR
+VXafm@[6TSlmzMRG@Sa]DE2
+r1
+31
+IF:JVoD:Xja5L>L[U`Q3b?3
+R4
+w1520663832
+8D:/signalcpu/GPR.v
+FD:/signalcpu/GPR.v
+L0 2
+R2
+R3
+n@g@p@r
+!i10b 1
+!s85 0
+!s100 P2bTc^z94DWT;aRdG_OYE0
+!s90 -reportprogress|300|-work|work|-vopt|D:/signalcpu/GPR.v|
+!s108 1520664972.453000
+!s107 D:/signalcpu/GPR.v|
+vIM
+VB76>nPlO4@Zjh[ebZ8[MY0
+r1
+31
+I:3LkUkEk0Yo]Ld?z0XP<z0
+R4
+w1458216567
+8D:/signalcpu/IM.v
+FD:/signalcpu/IM.v
+L0 3
+R2
+R3
+n@i@m
+!i10b 1
+!s85 0
+!s100 Sl^cDW5ibV5XmnTgLJXN`2
+!s90 -reportprogress|300|-work|work|-vopt|D:/signalcpu/IM.v|
+!s108 1520664972.531000
+!s107 D:/signalcpu/IM.v|
+vMips
+V;U]g=61l3n1fSQFLIPZn<1
+r1
+31
+II_:^Y9V<UmYg_AP=f5JXj1
+R4
+R1
+8D:/signalcpu/Mips.v
+FD:/signalcpu/Mips.v
+L0 2
+R2
+R3
+n@mips
+!i10b 1
+!s85 0
+!s100 1JUf[Z9jRYhG>HM`Z6a[41
+!s90 -reportprogress|300|-work|work|-vopt|D:/signalcpu/Mips.v|
+!s108 1520664972.640000
+!s107 D:/signalcpu/Mips.v|
+vMips_tb
+VdThPdFVIogFR=Z2bRH8R^3
+r1
+31
+IGn8o704f0H4>n9I[^a6l53
+R4
+w1520664965
+8D:/signalcpu/mips_tb.v
+FD:/signalcpu/mips_tb.v
+L0 1
+R2
+R3
+n@mips_tb
+!i10b 1
+!s85 0
+!s90 -reportprogress|300|-work|work|-vopt|D:/signalcpu/mips_tb.v|
+!s100 fOd8m;CFG4>KI@D9iNC7`3
+!s108 1520664972.734000
+!s107 D:/signalcpu/mips_tb.v|
+vPcUnit
+V]a]CEDh@j8]CVKED8oMZk1
+r1
+31
+IdWSNaK`EaSOL5J9oZ[D5Q1
+R4
+R1
+8D:/signalcpu/PcUnit.v
+FD:/signalcpu/PcUnit.v
+L0 2
+R2
+R3
+n@pc@unit
+!i10b 1
+!s85 0
+!s100 llNnS?3W<mVlN8fhH]K]10
+!s90 -reportprogress|300|-work|work|-vopt|D:/signalcpu/PcUnit.v|
+!s108 1520664972.812000
+!s107 D:/signalcpu/PcUnit.v|
