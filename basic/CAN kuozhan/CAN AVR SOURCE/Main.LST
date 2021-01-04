@@ -1,0 +1,245 @@
+C51 COMPILER V7.50   MAIN                                                                  07/11/2005 20:13:03 PAGE 1   
+
+
+C51 COMPILER V7.50, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN Main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          
+   2          #include"MCP2510.h"
+   3          #include"def.h"
+   4          #include"regx51.h"
+   5          
+   6          #define MCP2510INSTR_WRITE              0x02
+   7          #define MCP2510INSTR_READ               0x03
+   8          
+   9          int main(void)
+  10          {
+  11   1              int n,i,k,j;
+  12   1              char step[8]={0x10,0x30,0x20,0x60,0x40,0xc0,0x80,0x90};
+  13   1              //static unsigned char ntxbuffer=0;
+  14   1              unsigned char dlc;
+  15   1              //unsigned char value[8]={9,},trans[8]={1,0,3,4,5,6,7,8};
+  16   1              char value[8]={9,};
+  17   1               // trans[8]={'1','2','3','4','5','6','7','8'};
+  18   1              U8 byte;                        
+  19   1              unsigned char mcp_addr;
+  20   1      
+  21   1              Targetinit();   //目标版初始化
+  22   1      
+  23   1              init_MCP2510(BandRate_250kbps);//可在该函数内设置成回环模式
+  24   1                                        //从而只用一台设备完成实验
+  25   1              canSetup();
+  26   1                      
+  27   1              for(;;)
+  28   1              {       
+  29   2        /*  mcp_addr = (ntxbuffer<<4)+0x31;
+  30   2               P1_0=0;
+  31   2      
+  32   2              SendSIOData(MCP2510INSTR_WRITE);
+  33   2              SendSIOData((unsigned char)(mcp_addr+5));
+  34   2      
+  35   2              for (i=0; i < 8; i++) {
+  36   2                      SendSIOData(trans[i]);
+  37   2              }
+  38   2              P1_0=1; 
+  39   2              MCP2510_Write_Can_ID( mcp_addr, 0x123,FALSE);  // write CAN id
+  40   2              
+  41   2              MCP2510_Write((mcp_addr+4), 8);            // write the RTR and DLC
+  42   2      
+  43   2          switch(ntxbuffer){
+  44   2              case 0:
+  45   2                      MCP2510_transmit(TXB0CTRL);
+  46   2                      ntxbuffer=1;
+  47   2                      break;
+  48   2              case 1:
+  49   2                      MCP2510_transmit(TXB1CTRL);
+  50   2                      ntxbuffer=2;
+  51   2                      break;
+  52   2              case 2:
+  53   2                      MCP2510_transmit(TXB2CTRL);
+  54   2                      ntxbuffer=0;
+  55   2                      break;
+C51 COMPILER V7.50   MAIN                                                                  07/11/2005 20:13:03 PAGE 2   
+
+  56   2              }       */                 
+  57   2      
+  58   2             //while((n=canPoll())==-1);
+  59   2                      if((n=canPoll())!=-1){//CAN总线收数据
+  60   3                              byte=MCP2510_Read(CANINTF);
+  61   3      
+  62   3                              if(n==0){
+  63   4                              if(byte & RX0INT){
+  64   5                                  //*isExt=MCP2510_Read_Can(n+3, rxRTR, id, pdata, dlc);
+  65   5                              mcp_addr = ((n+3)<<4) + 0x31;
+  66   5                                  //MCP2510_Read_Can_ID( mcp_addr, can_id);
+  67   5                      dlc=MCP2510_Read( mcp_addr+4);
+  68   5                                  dlc &= DLC_MASK;
+  69   5                                      //value[0]=MCP2510_SRead((int)(mcp_addr+5));
+  70   5                                      P1_0=0;//MCP2510_Enable();P1_0=0;
+  71   5                                      SendSIOData(MCP2510INSTR_READ);
+  72   5                                      SendSIOData((unsigned char)(mcp_addr+5));
+  73   5                                      for(i=0;i<dlc;i++)
+  74   5                              value[i]=ReadSIOData(); 
+  75   5                                      P1_0=1;//MCP2510_Disable();                               
+  76   5                                  //MCP2510_SRead((int)(mcp_addr+5),dlc);
+  77   5                                      //MCP2510_SRead((int)(mcp_addr+5),1);
+  78   5                              MCP2510_WriteBits(CANINTF, ~RX0INT, RX0INT); // Clear interrupt
+  79   5                              }
+  80   4                      
+  81   4                      }
+  82   3                      else if(n ==1 ){
+  83   4                            if(byte & RX1INT){
+  84   5                            mcp_addr = ((n+4)<<4) + 0x31;
+  85   5                                //*isExt=MCP2510_Read_Can(n+4, rxRTR, id, pdata, dlc);
+  86   5                    dlc=MCP2510_Read( mcp_addr+4);
+  87   5                                dlc &= DLC_MASK;
+  88   5                                //value[0]=MCP2510_SRead((int)(mcp_addr+5));
+  89   5                                      P1_0=0;//MCP2510_Enable();
+  90   5                                      SendSIOData(MCP2510INSTR_READ);
+  91   5                                      SendSIOData((unsigned char)(mcp_addr+5));
+  92   5                                      for(i=0;i<dlc;i++)
+  93   5                              value[i]=ReadSIOData(); 
+  94   5                                      P1_0=1;//MCP2510_Disable();                               
+  95   5                                //MCP2510_SRead((int)(mcp_addr+5),dlc);
+  96   5                                //MCP2510_SRead((int)(mcp_addr+5),1);
+  97   5                                MCP2510_WriteBits(CANINTF, ~RX1INT, RX1INT); // Clear interrupt
+  98   5                            }
+  99   4                      
+ 100   4                      }                                
+ 101   3                }
+ 102   2                              
+ 103   2                              
+ 104   2               
+ 105   2              switch(value[0])
+ 106   2                { case 0x81:
+ 107   3                   {
+ 108   4                               P1_4=0;
+ 109   4                               for(i=0;i<10000;i++);
+ 110   4                               P1_4=1;
+ 111   4                  if(value[1]==1)
+ 112   4                   {P1_5=0;
+ 113   5                               P1_4=0;
+ 114   5                               for(i=0;i<30000;i++);
+ 115   5                               P1_4=1;}
+ 116   4                   else if(value[1]==0)
+ 117   4                   {P1_5=1;
+C51 COMPILER V7.50   MAIN                                                                  07/11/2005 20:13:03 PAGE 3   
+
+ 118   5                               P1_4=0;
+ 119   5                               for(i=0;i<30000;i++);
+ 120   5                               P1_4=1;}
+ 121   4      
+ 122   4                   value[0]=0;
+ 123   4                               value[1]=3;
+ 124   4                   }break;
+ 125   3                  case 0x82:
+ 126   3                  {P1_4=0;
+ 127   4                               for(i=0;i<10000;i++);
+ 128   4                               P1_4=1;
+ 129   4                              if(value[1]==1)
+ 130   4                   P1_6=0;
+ 131   4                   else if(value[1]==0)
+ 132   4                   P1_6=1;
+ 133   4                   value[0]=0;
+ 134   4                               value[1]=3;
+ 135   4                   }break;
+ 136   3                  case 0x83:
+ 137   3                  {P1_4=0;
+ 138   4                               for(i=0;i<10000;i++);
+ 139   4                               P1_4=1;
+ 140   4                              if(value[1]==1)
+ 141   4                   P1_7=0;
+ 142   4                   else if(value[1]==0)
+ 143   4                   P1_7=1;
+ 144   4                   value[0]=0;
+ 145   4                               value[1]=3;
+ 146   4                   }break;
+ 147   3                  case 0x84:
+ 148   3                  {P1_4=0;
+ 149   4                               for(i=0;i<10000;i++);
+ 150   4                               P1_4=1;
+ 151   4                              if(value[1]==1)
+ 152   4                   P1_4=0;
+ 153   4                   else if(value[1]==0)
+ 154   4                   P1_4=1;
+ 155   4                   value[0]=0;
+ 156   4                               value[1]=3;
+ 157   4                   }break;
+ 158   3                  case 0x85:
+ 159   3      
+ 160   3                  {//if((0<=value[1])&&(value[1]<10))
+ 161   4                              P1_4=0;
+ 162   4                               for(i=0;i<10000;i++);
+ 163   4                               P1_4=1;
+ 164   4                   P2=value[1];
+ 165   4                   //else
+ 166   4                   //P2=0xaa; 
+ 167   4                   value[0]=0;
+ 168   4                               value[1]=0xaa;
+ 169   4                   }break;
+ 170   3                  case 0x86:
+ 171   3                              {P1_4=0;
+ 172   4                               for(i=0;i<10000;i++);
+ 173   4                               P1_4=1;
+ 174   4                              if(value[1]>=0)
+ 175   4                               
+ 176   4                                 for(k=0;k<(int)(value[1]*4);k++){
+ 177   5                                   for(i=0;i<8;i++){
+ 178   6                                         P0=(P0&0x0f)+step[i];
+ 179   6                                         for(j=0;j<170;j++);
+C51 COMPILER V7.50   MAIN                                                                  07/11/2005 20:13:03 PAGE 4   
+
+ 180   6                                   }
+ 181   5                                       }
+ 182   4                   else
+ 183   4                     for(k=(int)(value[1]*4);k<0;k++){
+ 184   5                                   for(i=7;i>=0;i--){
+ 185   6                                         P0=(P0&0x0f)+step[i];
+ 186   6                                         for(j=0;j<170;j++);
+ 187   6                                   }
+ 188   5                                       }
+ 189   4                              value[0]=0;
+ 190   4                              value[1]=0;
+ 191   4                          }break;
+ 192   3                        /* case '1':
+ 193   3                              {P1_6=0;
+ 194   3                               for(k=0;k<256;k++)
+ 195   3                                for(i=0;i<8;i++){
+ 196   3                                      P0=(P0&0x0f)+step[i];
+ 197   3                                       for(j=0;j<170;j++);
+ 198   3                                 }                     
+ 199   3                               P1_6=1;
+ 200   3                               P1_4=0;
+ 201   3                               for(l=0;l<10000;l++);
+ 202   3                               P1_4=1;
+ 203   3                               value[0]=9;
+ 204   3                              }break;
+ 205   3                 case '2':
+ 206   3                          {P2=0x88;
+ 207   3                               for(k=0;k<30000;k++);
+ 208   3                               P2=0xaa;               
+ 209   3                               value[0]=9;
+ 210   3                               
+ 211   3                              }break;
+ 212   3                              //default:
+ 213   3                              //P1_4=0;       */                                              
+ 214   3                  }//end switch
+ 215   2            }
+ 216   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    841    ----
+   CONSTANT SIZE    =     16    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      27
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

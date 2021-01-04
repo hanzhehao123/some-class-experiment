@@ -1,0 +1,46 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+ cExt (*.c)
+ aExt (*.s*; *.src; *.a*)
+ oExt (*.obj)
+ lExt (*.lib)
+ tExt (*.txt; *.h; *.inc)
+ pExt (*.plm)
+ CppX (*.cpp)
+ DaveTm { 0,0,0,0,0,0,0,0 }
+
+Target (Target 1), 0x0000 // Tools: 'MCS-51'
+GRPOPT 1,(Source Group 1),1,0,0
+GRPOPT 2,(source),1,0,0
+GRPOPT 3,(head),1,0,0
+
+OPTFFF 2,1,1,335544320,0,410,419,0,<.\MCP2510.c><MCP2510.c> { 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,252,255,255,255,207,255,255,255,0,0,0,0,0,0,0,0,223,2,0,0,69,1,0,0 }
+OPTFFF 2,2,1,536870914,0,141,141,0,<.\Main.c><Main.c> { 44,0,0,0,2,0,0,0,3,0,0,0,255,255,255,255,255,255,255,255,252,255,255,255,207,255,255,255,11,0,0,0,160,0,0,0,234,2,0,0,229,1,0,0 }
+OPTFFF 2,3,1,117440512,0,1,5,0,<.\Targetinit.c><Targetinit.c> { 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,252,255,255,255,207,255,255,255,27,0,0,0,48,0,0,0,250,2,0,0,117,1,0,0 }
+OPTFFF 3,4,5,0,0,0,0,0,<.\MCP2510.h><MCP2510.h> 
+OPTFFF 3,5,5,0,0,0,0,0,<.\DEF.H><DEF.H> 
+OPTFFF 3,6,5,0,0,0,0,0,<.\regx51.h><regx51.h> 
+
+
+TARGOPT 1, (Target 1)
+ CLK51=33000000
+  OPTTT 1,1,1,0
+  OPTHX 0,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTOX 16
+  OPTLT 1,1,1,0,1,1,0,1,0,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 1,0,1
+  OPTBL 0,(Data Sheet)<DATASHTS\ATMEL\DOC0851.PDF>
+  OPTBL 1,(Add on databooks)<DATASHTS\ADDBOOKS.PDF>
+  OPTBL 2,(Instruction Set Manual)<DATASHTS\ATMEL\DOC0509.PDF>
+  OPTDL (S8051.DLL)()(DP51.DLL)(-pAT52)(S8051.DLL)()(TP51.DLL)(-pAT52)
+  OPTDBG 44029,-1,()()()()()()()()()() (BIN\MON51.DLL)()()()
+  OPTKEY 0,(DLGDP51)((98=-1,-1,-1,-1,0)(82=-1,-1,-1,-1,0)(83=653,138,915,277,1)(84=-1,-1,-1,-1,0)(85=-1,-1,-1,-1,0)(3003=-1,-1,-1,-1,0)(91=-1,-1,-1,-1,0)(92=-1,-1,-1,-1,0)(94=-1,-1,-1,-1,0)(5023=-1,-1,-1,-1,0))
+  OPTMM 1,0,(0x00E0)
+  OPTDF 0x82
+  OPTLE <>
+  OPTLC <>
+EndOpt
+

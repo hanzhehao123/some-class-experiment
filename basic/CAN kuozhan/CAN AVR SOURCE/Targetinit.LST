@@ -1,0 +1,39 @@
+C51 COMPILER V7.50   TARGETINIT                                                            07/11/2005 20:13:03 PAGE 1   
+
+
+C51 COMPILER V7.50, COMPILATION OF MODULE TARGETINIT
+OBJECT MODULE PLACED IN Targetinit.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Targetinit.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "regx51.h"
+   2          Targetinit()
+   3          {P1_0=1;  //CS
+   4   1       P1_4=1;  //∑Ê√˘∆˜
+   5   1       P1_5=1;  //LED
+   6   1       P1_6=1;  //LED
+   7   1       P1_7=1;  //LED
+   8   1       P0_0=1;  // ‰»Î
+   9   1       P0_1=1;  // ‰»Î
+  10   1       P0_2=1;  // ‰»Î
+  11   1       P0_3=1;  // ‰»Î
+  12   1       P0_4=0;
+  13   1       P0_5=0;
+  14   1       P0_6=0;
+  15   1       P0_7=0;
+  16   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     27    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
