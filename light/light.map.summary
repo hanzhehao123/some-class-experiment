@@ -1,0 +1,12 @@
+Analysis & Synthesis Status : Successful - Thu May 31 15:44:57 2018
+Quartus II Version : 5.1 Build 176 10/26/2005 SJ Full Version
+Revision Name : light
+Top-level Entity Name : light
+Family : Cyclone II
+Total combinational functions : 104
+Total registers : 65
+Total pins : 9
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

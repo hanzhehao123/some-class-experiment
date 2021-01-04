@@ -1,0 +1,640 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L118 is reduce_or~136 at LCCOMB_X1_Y5_N20
+A1L118 = dat[3] & dat[0] & (dat[1] $ dat[2]) # !dat[3] & !dat[1] & (dat[0] $ dat[2]);
+
+
+--A1L119 is reduce_or~137 at LCCOMB_X1_Y5_N28
+A1L119 = dat[1] & (dat[0] & dat[3] # !dat[0] & (dat[2])) # !dat[1] & dat[2] & (dat[3] $ dat[0]);
+
+
+--A1L120 is reduce_or~138 at LCCOMB_X1_Y5_N26
+A1L120 = dat[3] & dat[2] & (dat[1] # !dat[0]) # !dat[3] & dat[1] & !dat[0] & !dat[2];
+
+
+--A1L121 is reduce_or~139 at LCCOMB_X1_Y5_N12
+A1L121 = dat[1] & (dat[0] & (dat[2]) # !dat[0] & dat[3] & !dat[2]) # !dat[1] & !dat[3] & (dat[0] $ dat[2]);
+
+
+--A1L122 is reduce_or~140 at LCCOMB_X1_Y5_N16
+A1L122 = dat[1] & !dat[3] & dat[0] # !dat[1] & (dat[2] & !dat[3] # !dat[2] & (dat[0]));
+
+
+--A1L123 is reduce_or~141 at LCCOMB_X1_Y5_N6
+A1L123 = dat[1] & !dat[3] & (dat[0] # !dat[2]) # !dat[1] & dat[0] & (dat[3] $ !dat[2]);
+
+
+--A1L124 is reduce_or~142 at LCCOMB_X1_Y5_N10
+A1L124 = dat[0] & (dat[3] # dat[1] $ dat[2]) # !dat[0] & (dat[1] # dat[3] $ dat[2]);
+
+
+--cnt[2] is cnt[2] at LCFF_X24_Y5_N5
+cnt[2] = DFFEAS(A1L43, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--cnt[0] is cnt[0] at LCFF_X24_Y5_N15
+cnt[0] = DFFEAS(A1L40, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--cnt[1] is cnt[1] at LCFF_X24_Y5_N31
+cnt[1] = DFFEAS(A1L44, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L1 is Decoder~147 at LCCOMB_X25_Y5_N20
+A1L1 = cnt[2] & !cnt[1] & !cnt[0];
+
+
+--A1L2 is Decoder~148 at LCCOMB_X25_Y5_N6
+A1L2 = !cnt[2] & !cnt[1] & cnt[0];
+
+
+--A1L3 is Decoder~149 at LCCOMB_X25_Y5_N16
+A1L3 = !cnt[2] & cnt[1] & !cnt[0];
+
+
+--A1L4 is Decoder~150 at LCCOMB_X25_Y5_N24
+A1L4 = !cnt[2] & cnt[1] & cnt[0];
+
+
+--A1L8Q is LED[0]~reg0 at LCFF_X25_Y4_N5
+A1L8Q = DFFEAS(A1L16, clk100khz,  ,  , A1L132,  ,  ,  ,  );
+
+
+--A1L10Q is LED[1]~reg0 at LCFF_X25_Y4_N13
+A1L10Q = DFFEAS(A1L17, clk100khz,  ,  , A1L132,  ,  ,  ,  );
+
+
+--A1L12Q is LED[2]~reg0 at LCFF_X25_Y4_N23
+A1L12Q = DFFEAS(A1L18, clk100khz,  ,  , A1L132,  ,  ,  ,  );
+
+
+--A1L15Q is LED[3]~reg0 at LCFF_X25_Y4_N11
+A1L15Q = DFFEAS(A1L14, clk100khz,  ,  , A1L132,  ,  ,  ,  );
+
+
+--count_one[0] is count_one[0] at LCFF_X25_Y5_N31
+count_one[0] = DFFEAS(A1L51, clk1hz, !GLOBAL(A1L90),  ,  ,  ,  ,  ,  );
+
+
+--data[0] is data[0] at LCFF_X24_Y5_N11
+data[0] = DFFEAS(UNCONNECTED_DATAIN, clk100khz,  ,  , A1L91, A1L94,  , reset, VCC);
+
+
+--data1[0] is data1[0] at LCFF_X27_Y5_N21
+data1[0] = DFFEAS(A1L87, clk100khz,  ,  , A1L114,  ,  , reset,  );
+
+
+--A1L19 is Select~135 at LCCOMB_X24_Y5_N10
+A1L19 = cnt[0] & (data[0] # cnt[1]) # !cnt[0] & data1[0] & (!cnt[1]);
+
+
+--count_ten[0] is count_ten[0] at LCFF_X25_Y6_N19
+count_ten[0] = DFFEAS(A1L65, clk1hz, !GLOBAL(A1L90),  ,  , count_ten[0],  ,  , A1L67);
+
+
+--A1L20 is Select~136 at LCCOMB_X24_Y5_N28
+A1L20 = A1L19 & (count_ten[0] # !cnt[1]) # !A1L19 & (cnt[1] & !count_one[0]);
+
+
+--A1L125 is reduce_or~143 at LCCOMB_X25_Y5_N8
+A1L125 = cnt[2] $ (cnt[1] # cnt[0]);
+
+
+--count_one[1] is count_one[1] at LCFF_X25_Y7_N9
+count_one[1] = DFFEAS(A1L53, clk1hz, !GLOBAL(A1L90),  ,  , count_one[1],  ,  , A1L50);
+
+
+--data[1] is data[1] at LCFF_X24_Y5_N23
+data[1] = DFFEAS(UNCONNECTED_DATAIN, clk100khz,  ,  , A1L91, A1L95,  , reset, VCC);
+
+
+--data1[1] is data1[1] at LCFF_X27_Y5_N23
+data1[1] = DFFEAS(A1L96, clk100khz,  ,  , A1L114,  ,  , reset,  );
+
+
+--A1L21 is Select~137 at LCCOMB_X24_Y5_N22
+A1L21 = cnt[1] & cnt[0] # !cnt[1] & (cnt[0] & data[1] # !cnt[0] & (data1[1]));
+
+
+--count_ten[1] is count_ten[1] at LCFF_X25_Y6_N5
+count_ten[1] = DFFEAS(A1L69, clk1hz, !GLOBAL(A1L90),  ,  , count_ten[1],  ,  , A1L67);
+
+
+--A1L22 is Select~138 at LCCOMB_X24_Y5_N18
+A1L22 = cnt[1] & (A1L21 & count_ten[1] # !A1L21 & (count_one[1])) # !cnt[1] & (A1L21);
+
+
+--data[2] is data[2] at LCFF_X26_Y5_N31
+data[2] = DFFEAS(A1L97, clk100khz,  ,  , A1L91,  ,  , reset,  );
+
+
+--count_one[2] is count_one[2] at LCFF_X25_Y5_N19
+count_one[2] = DFFEAS(A1L58, clk1hz, !GLOBAL(A1L90),  ,  ,  ,  ,  ,  );
+
+
+--data1[2] is data1[2] at LCFF_X25_Y5_N29
+data1[2] = DFFEAS(UNCONNECTED_DATAIN, clk100khz,  ,  , A1L114, A1L115,  , reset, VCC);
+
+
+--A1L23 is Select~139 at LCCOMB_X25_Y5_N28
+A1L23 = cnt[1] & (cnt[0] # !count_one[2]) # !cnt[1] & (data1[2] & !cnt[0]);
+
+
+--count_ten[2] is count_ten[2] at LCFF_X25_Y6_N17
+count_ten[2] = DFFEAS(A1L72, clk1hz, !GLOBAL(A1L90),  ,  , count_ten[2],  ,  , A1L67);
+
+
+--A1L24 is Select~140 at LCCOMB_X24_Y5_N26
+A1L24 = cnt[0] & (A1L23 & (count_ten[2]) # !A1L23 & data[2]) # !cnt[0] & (A1L23);
+
+
+--A1L5 is Decoder~151 at LCCOMB_X24_Y5_N8
+A1L5 = !cnt[2] & cnt[1];
+
+
+--count_ten[3] is count_ten[3] at LCFF_X25_Y6_N9
+count_ten[3] = DFFEAS(A1L75, clk1hz, !GLOBAL(A1L90),  ,  , count_ten[3],  ,  , A1L67);
+
+
+--count_one[3] is count_one[3] at LCFF_X25_Y7_N25
+count_one[3] = DFFEAS(A1L60, clk1hz, !GLOBAL(A1L90),  ,  , count_one[3],  ,  , A1L50);
+
+
+--A1L25 is Select~141 at LCCOMB_X24_Y5_N2
+A1L25 = A1L5 & (cnt[0] & (count_ten[3]) # !cnt[0] & count_one[3]);
+
+
+--A1L43 is cnt~71 at LCCOMB_X24_Y5_N4
+A1L43 = cnt[0] & !cnt[2] & cnt[1] # !cnt[0] & cnt[2];
+
+
+--A1L44 is cnt~72 at LCCOMB_X24_Y5_N30
+A1L44 = cnt[0] & !cnt[1] & !cnt[2] # !cnt[0] & cnt[1];
+
+
+--A1L16 is LED~64 at LCCOMB_X25_Y4_N4
+A1L16 = input3 & input2 & input1 & !input4;
+
+
+--count_flag is count_flag at LCFF_X25_Y5_N3
+count_flag = DFFEAS(A1L46, clk1hz, !GLOBAL(A1L90),  ,  ,  ,  ,  ,  );
+
+
+--input_flag is input_flag at LCFF_X26_Y5_N23
+input_flag = DFFEAS(A1L117, clk100khz,  ,  ,  ,  ,  , reset,  );
+
+
+--A1L132 is rtl~89 at LCCOMB_X24_Y5_N12
+A1L132 = !reset & (!input_flag & !count_flag # !clr);
+
+
+--A1L17 is LED~65 at LCCOMB_X25_Y4_N12
+A1L17 = !input3 & input2 & input1;
+
+
+--A1L18 is LED~66 at LCCOMB_X25_Y4_N22
+A1L18 = input1 & !input2;
+
+
+--time_one[0] is time_one[0] at LCFF_X26_Y6_N1
+time_one[0] = DFFEAS(A1L148, clk1hz, !GLOBAL(A1L129),  , A1L144,  ,  ,  ,  );
+
+
+--input_flag1 is input_flag1 at LCFF_X26_Y5_N3
+input_flag1 = DFFEAS(A1L116, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L31 is always0~1 at LCCOMB_X26_Y5_N0
+A1L31 = !count_flag & input_flag & !input_flag1;
+
+
+--A1L49 is count_one[0]~806 at LCCOMB_X25_Y5_N14
+A1L49 = !count_ten[3] & !count_ten[1] & !count_ten[2] & !count_ten[0];
+
+
+--A1L130 is rtl~3 at LCCOMB_X26_Y5_N6
+A1L130 = count_one[0] & !count_one[3] & !count_one[1] & count_one[2];
+
+
+--A1L32 is always0~50 at LCCOMB_X26_Y5_N18
+A1L32 = !count_flag & !input_flag1;
+
+
+--A1L50 is count_one[0]~807 at LCCOMB_X26_Y5_N12
+A1L50 = A1L130 & A1L49 & !input_flag # !A1L32;
+
+
+--A1L51 is count_one[0]~808 at LCCOMB_X25_Y5_N30
+A1L51 = A1L50 & (count_one[0]) # !A1L50 & (A1L31 & !time_one[0] # !A1L31 & (!count_one[0]));
+
+
+--A1L89 is data[0]~177 at LCCOMB_X26_Y5_N20
+A1L89 = reset # !clr;
+
+
+--A1L94 is data~178 at LCCOMB_X26_Y5_N4
+A1L94 = clr & (!input3 & input2 # !input1);
+
+
+--A1L113 is input_flag1~164 at LCCOMB_X26_Y5_N10
+A1L113 = input3 & input1 & input2 & input4;
+
+
+--A1L91 is data[0]~179 at LCCOMB_X24_Y5_N0
+A1L91 = A1L89 # !count_flag & !input_flag & !A1L113;
+
+
+--A1L87 is data1~95 at LCCOMB_X27_Y5_N20
+A1L87 = input2 & !input3 # !input1;
+
+
+--A1L114 is input_flag1~165 at LCCOMB_X26_Y5_N16
+A1L114 = reset # !A1L113 & !clr;
+
+
+--time_ten[0] is time_ten[0] at LCFF_X26_Y6_N13
+time_ten[0] = DFFEAS(A1L155, clk1hz, !GLOBAL(A1L129),  , A1L154,  ,  ,  ,  );
+
+
+--A1L65 is count_ten[0]~72 at LCCOMB_X25_Y6_N18
+A1L65 = A1L31 & !time_ten[0] # !A1L31 & (!count_ten[0]);
+
+
+--A1L67 is count_ten[0]~164 at LCCOMB_X25_Y5_N12
+A1L67 = !input_flag & (A1L49 # !A1L130) # !A1L32;
+
+
+--A1L62 is count_one~809 at LCCOMB_X25_Y5_N4
+A1L62 = count_one[0] & (count_one[1] # !count_one[3] & count_one[2]) # !count_one[0] & !count_one[1];
+
+
+--time_one[1] is time_one[1] at LCFF_X26_Y6_N11
+time_one[1] = DFFEAS(A1L149, clk1hz, !GLOBAL(A1L129),  , A1L144,  ,  ,  ,  );
+
+
+--A1L53 is count_one[1]~225 at LCCOMB_X25_Y7_N8
+A1L53 = A1L31 & (time_one[1]) # !A1L31 & !A1L62;
+
+
+--A1L95 is data~180 at LCCOMB_X26_Y5_N26
+A1L95 = input1 & clr & (!input2 # !input3);
+
+
+--A1L96 is data~181 at LCCOMB_X27_Y5_N22
+A1L96 = input1 & (!input3 # !input2);
+
+
+--A1L26 is add~521 at LCCOMB_X25_Y6_N22
+A1L26 = count_ten[0] $ count_ten[1];
+
+
+--time_ten[1] is time_ten[1] at LCFF_X26_Y6_N29
+time_ten[1] = DFFEAS(A1L30, clk1hz, !GLOBAL(A1L129),  , A1L154,  ,  ,  ,  );
+
+
+--A1L69 is count_ten[1]~73 at LCCOMB_X25_Y6_N4
+A1L69 = A1L31 & (!time_ten[1]) # !A1L31 & !A1L26;
+
+
+--A1L97 is data~182 at LCCOMB_X26_Y5_N30
+A1L97 = input3 & input2 & input1 & clr;
+
+
+--time_one[2] is time_one[2] at LCFF_X26_Y6_N17
+time_one[2] = DFFEAS(A1L150, clk1hz, !GLOBAL(A1L129),  , A1L144,  ,  ,  ,  );
+
+
+--A1L56 is count_one[2]~810 at LCCOMB_X25_Y5_N10
+A1L56 = count_one[0] & (count_one[1] & (!count_one[2]) # !count_one[1] & count_one[3] & count_one[2]) # !count_one[0] & (!count_one[2]);
+
+
+--A1L57 is count_one[2]~811 at LCCOMB_X25_Y5_N0
+A1L57 = input_flag & (A1L32 & (time_one[2]) # !A1L32 & A1L56) # !input_flag & A1L56;
+
+
+--A1L58 is count_one[2]~812 at LCCOMB_X25_Y5_N18
+A1L58 = A1L50 & count_one[2] # !A1L50 & (!A1L57);
+
+
+--A1L115 is input_flag1~166 at LCCOMB_X26_Y5_N14
+A1L115 = input3 & input1 & input2;
+
+
+--A1L27 is add~522 at LCCOMB_X25_Y6_N20
+A1L27 = count_ten[2] $ (count_ten[0] # count_ten[1]);
+
+
+--time_ten[2] is time_ten[2] at LCFF_X26_Y6_N31
+time_ten[2] = DFFEAS(A1L159, clk1hz, !GLOBAL(A1L129),  , A1L154,  ,  ,  ,  );
+
+
+--A1L72 is count_ten[2]~74 at LCCOMB_X25_Y6_N16
+A1L72 = A1L31 & (time_ten[2]) # !A1L31 & !A1L27;
+
+
+--A1L28 is add~523 at LCCOMB_X25_Y6_N0
+A1L28 = count_ten[3] $ (count_ten[2] # count_ten[1] # count_ten[0]);
+
+
+--time_ten[3] is time_ten[3] at LCFF_X26_Y6_N7
+time_ten[3] = DFFEAS(A1L160, clk1hz, !GLOBAL(A1L129),  , A1L154,  ,  ,  ,  );
+
+
+--A1L75 is count_ten[3]~75 at LCCOMB_X25_Y6_N8
+A1L75 = A1L31 & time_ten[3] # !A1L31 & (!A1L28);
+
+
+--A1L29 is add~524 at LCCOMB_X25_Y5_N22
+A1L29 = count_one[3] $ (count_one[1] # !count_one[2] # !count_one[0]);
+
+
+--time_one[3] is time_one[3] at LCFF_X26_Y6_N23
+time_one[3] = DFFEAS(A1L151, clk1hz, !GLOBAL(A1L129),  , A1L144,  ,  ,  ,  );
+
+
+--A1L60 is count_one[3]~226 at LCCOMB_X25_Y7_N24
+A1L60 = A1L31 & time_one[3] # !A1L31 & (!A1L29);
+
+
+--A1L133 is rtl~90 at LCCOMB_X25_Y5_N26
+A1L133 = A1L130 & !input_flag & A1L49 & !input_flag1;
+
+
+--A1L131 is rtl~7 at LCCOMB_X26_Y6_N18
+A1L131 = !time_one[1] & !time_one[0] & !time_one[2] & !time_one[3];
+
+
+--A1L33 is always0~51 at LCCOMB_X26_Y6_N26
+A1L33 = time_ten[0] & time_ten[1] & !time_ten[2];
+
+
+--A1L34 is always0~52 at LCCOMB_X26_Y6_N14
+A1L34 = !time_ten[3] & A1L131 & A1L33;
+
+
+--A1L46 is count_flag~68 at LCCOMB_X25_Y5_N2
+A1L46 = count_flag # A1L133 # A1L34 & A1L31;
+
+
+--A1L117 is input_flag~104 at LCCOMB_X26_Y5_N22
+A1L117 = input_flag # !count_flag & clr & !A1L113;
+
+
+--A1L148 is time_one~346 at LCCOMB_X26_Y6_N0
+A1L148 = A1L131 & (time_ten[3] # !A1L33) # !A1L131 & (!time_one[0]);
+
+
+--A1L144 is time_one[0]~347 at LCCOMB_X26_Y5_N8
+A1L144 = !count_flag & clr & input_flag & !input_flag1;
+
+
+--A1L116 is input_flag1~167 at LCCOMB_X26_Y5_N2
+A1L116 = !reset & (input_flag1 # !A1L113 & !clr);
+
+
+--A1L134 is rtl~91 at LCCOMB_X26_Y5_N28
+A1L134 = !time_one[0] & !time_one[2] & !time_one[1];
+
+
+--A1L154 is time_ten[0]~251 at LCCOMB_X26_Y5_N24
+A1L154 = A1L134 & clr & !time_one[3] & A1L31;
+
+
+--A1L149 is time_one~348 at LCCOMB_X26_Y6_N10
+A1L149 = time_one[0] & (time_one[1]) # !time_one[0] & !time_one[1] & (time_one[2] # time_one[3]);
+
+
+--A1L30 is add~525 at LCCOMB_X26_Y6_N28
+A1L30 = time_ten[1] $ time_ten[0];
+
+
+--A1L150 is time_one~349 at LCCOMB_X26_Y6_N16
+A1L150 = time_one[1] & (time_one[2]) # !time_one[1] & (time_one[0] & time_one[2] # !time_one[0] & !time_one[2] & time_one[3]);
+
+
+--A1L159 is time_ten~252 at LCCOMB_X26_Y6_N30
+A1L159 = !A1L34 & (time_ten[2] $ (time_ten[0] & time_ten[1]));
+
+
+--A1L160 is time_ten~253 at LCCOMB_X26_Y6_N6
+A1L160 = time_ten[3] & (!A1L33) # !time_ten[3] & !A1L131 & A1L33;
+
+
+--A1L151 is time_one~350 at LCCOMB_X26_Y6_N22
+A1L151 = A1L134 & !time_one[3] & (time_ten[3] # !A1L33) # !A1L134 & (time_one[3]);
+
+
+--A1L40 is cnt[0]~73 at LCCOMB_X24_Y5_N14
+A1L40 = !cnt[0];
+
+
+--A1L14 is LED[3]~70 at LCCOMB_X25_Y4_N10
+A1L14 = !input1;
+
+
+--A1L155 is time_ten[0]~254 at LCCOMB_X26_Y6_N12
+A1L155 = !time_ten[0];
+
+
+--dat[0] is dat[0] at LCCOMB_X24_Y5_N20
+dat[0] = GLOBAL(A1L126) & A1L20 # !GLOBAL(A1L126) & (dat[0]);
+
+
+--dat[1] is dat[1] at LCCOMB_X24_Y5_N16
+dat[1] = GLOBAL(A1L126) & A1L22 # !GLOBAL(A1L126) & (dat[1]);
+
+
+--dat[2] is dat[2] at LCCOMB_X24_Y5_N24
+dat[2] = GLOBAL(A1L126) & A1L24 # !GLOBAL(A1L126) & (dat[2]);
+
+
+--dat[3] is dat[3] at LCCOMB_X24_Y5_N6
+dat[3] = GLOBAL(A1L126) & A1L25 # !GLOBAL(A1L126) & (dat[3]);
+
+
+--clk100khz is clk100khz at PIN_70
+--operation mode is input
+
+clk100khz = INPUT();
+
+
+--input4 is input4 at PIN_103
+--operation mode is input
+
+input4 = INPUT();
+
+
+--input1 is input1 at PIN_99
+--operation mode is input
+
+input1 = INPUT();
+
+
+--input2 is input2 at PIN_100
+--operation mode is input
+
+input2 = INPUT();
+
+
+--input3 is input3 at PIN_101
+--operation mode is input
+
+input3 = INPUT();
+
+
+--clr is clr at PIN_63
+--operation mode is input
+
+clr = INPUT();
+
+
+--reset is reset at PIN_64
+--operation mode is input
+
+reset = INPUT();
+
+
+--clk1hz is clk1hz at PIN_71
+--operation mode is input
+
+clk1hz = INPUT();
+
+
+--dout[0] is dout[0] at PIN_24
+--operation mode is output
+
+dout[0] = OUTPUT(!A1L118);
+
+
+--dout[1] is dout[1] at PIN_25
+--operation mode is output
+
+dout[1] = OUTPUT(!A1L119);
+
+
+--dout[2] is dout[2] at PIN_26
+--operation mode is output
+
+dout[2] = OUTPUT(!A1L120);
+
+
+--dout[3] is dout[3] at PIN_27
+--operation mode is output
+
+dout[3] = OUTPUT(!A1L121);
+
+
+--dout[4] is dout[4] at PIN_28
+--operation mode is output
+
+dout[4] = OUTPUT(!A1L122);
+
+
+--dout[5] is dout[5] at PIN_30
+--operation mode is output
+
+dout[5] = OUTPUT(!A1L123);
+
+
+--dout[6] is dout[6] at PIN_31
+--operation mode is output
+
+dout[6] = OUTPUT(A1L124);
+
+
+--dout[7] is dout[7] at PIN_32
+--operation mode is output
+
+dout[7] = OUTPUT(GND);
+
+
+--scan[0] is scan[0] at PIN_45
+--operation mode is output
+
+scan[0] = OUTPUT(A1L1);
+
+
+--scan[1] is scan[1] at PIN_44
+--operation mode is output
+
+scan[1] = OUTPUT(GND);
+
+
+--scan[2] is scan[2] at PIN_43
+--operation mode is output
+
+scan[2] = OUTPUT(A1L2);
+
+
+--scan[3] is scan[3] at PIN_42
+--operation mode is output
+
+scan[3] = OUTPUT(GND);
+
+
+--scan[4] is scan[4] at PIN_41
+--operation mode is output
+
+scan[4] = OUTPUT(A1L3);
+
+
+--scan[5] is scan[5] at PIN_40
+--operation mode is output
+
+scan[5] = OUTPUT(A1L4);
+
+
+--LED[0] is LED[0] at PIN_55
+--operation mode is output
+
+LED[0] = OUTPUT(A1L8Q);
+
+
+--LED[1] is LED[1] at PIN_53
+--operation mode is output
+
+LED[1] = OUTPUT(A1L10Q);
+
+
+--LED[2] is LED[2] at PIN_52
+--operation mode is output
+
+LED[2] = OUTPUT(A1L12Q);
+
+
+--LED[3] is LED[3] at PIN_51
+--operation mode is output
+
+LED[3] = OUTPUT(A1L15Q);
+
+
+
+
+
+--A1L128 is reset~clk_delay_ctrl at CLKDELAYCTRL_G7
+A1L128 = CLK_DELAY_CTRL.CLKOUT(.CLK(reset));
+
+
+--A1L90 is data[0]~177clkctrl at CLKCTRL_G1
+A1L90 = cycloneii_clkctrl(.INCLK[0] = A1L89) WITH (clock_type = "Global Clock");
+
+
+--A1L126 is reduce_or~143clkctrl at CLKCTRL_G0
+A1L126 = cycloneii_clkctrl(.INCLK[0] = A1L125) WITH (clock_type = "Global Clock");
+
+
+--A1L129 is reset~clkctrl at CLKCTRL_G7
+A1L129 = cycloneii_clkctrl(.INCLK[0] = A1L128) WITH (clock_type = "Global Clock");
+
+

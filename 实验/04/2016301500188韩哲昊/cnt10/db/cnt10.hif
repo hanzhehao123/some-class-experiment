@@ -1,0 +1,43 @@
+Version 5.1 Build 176 10/26/2005 SJ Full Version
+10
+705
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Partition --
+-- End Partition --
+# entity
+cnt10
+# storage
+db|cnt10.(0).cnf
+db|cnt10.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+cnt10.v
+e053f72c94517731f8ab97530f15936
+7
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+|
+}
+# end
+# complete
+

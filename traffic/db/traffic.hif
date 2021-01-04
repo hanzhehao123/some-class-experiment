@@ -1,0 +1,43 @@
+Version 5.1 Build 176 10/26/2005 SJ Full Version
+10
+705
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Partition --
+-- End Partition --
+# entity
+traffic
+# storage
+db|traffic.(0).cnf
+db|traffic.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+traffic.v
+55a32574e21c70e8f543b4f2b9b7f2a
+7
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+|
+}
+# end
+# complete
+

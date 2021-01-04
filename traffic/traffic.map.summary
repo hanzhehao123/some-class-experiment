@@ -1,0 +1,12 @@
+Analysis & Synthesis Status : Successful - Thu Jun 21 14:43:25 2018
+Quartus II Version : 5.1 Build 176 10/26/2005 SJ Full Version
+Revision Name : traffic
+Top-level Entity Name : traffic
+Family : Cyclone II
+Total combinational functions : 51
+Total registers : 14
+Total pins : 27
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

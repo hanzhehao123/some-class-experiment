@@ -1,0 +1,438 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--data[0] is data[0] at LCFF_X3_Y4_N25
+data[0] = DFFEAS(A1L26, clk1khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--data[1] is data[1] at LCFF_X3_Y4_N29
+data[1] = DFFEAS(A1L27, clk1khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--data[2] is data[2] at LCFF_X3_Y4_N13
+data[2] = DFFEAS(A1L28, clk1khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--data[3] is data[3] at LCFF_X3_Y4_N11
+data[3] = DFFEAS(A1L29, clk1khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L56 is reduce_or~116 at LCCOMB_X3_Y4_N0
+A1L56 = data[0] & (data[3] $ (!data[2] & !data[1])) # !data[0] & data[2] & !data[1] & !data[3];
+
+
+--A1L57 is reduce_or~117 at LCCOMB_X3_Y4_N18
+A1L57 = data[1] & (data[0] & (data[3]) # !data[0] & data[2]) # !data[1] & data[2] & (data[0] $ data[3]);
+
+
+--A1L58 is reduce_or~118 at LCCOMB_X3_Y4_N8
+A1L58 = data[2] & data[3] & (data[1] # !data[0]) # !data[2] & data[1] & !data[0] & !data[3];
+
+
+--A1L59 is reduce_or~119 at LCCOMB_X3_Y4_N2
+A1L59 = data[1] & (data[2] & data[0] # !data[2] & !data[0] & data[3]) # !data[1] & !data[3] & (data[2] $ data[0]);
+
+
+--A1L60 is reduce_or~120 at LCCOMB_X3_Y4_N4
+A1L60 = data[2] & (data[1] & data[0] # !data[1] & (!data[3])) # !data[2] & data[0] & (!data[3] # !data[1]);
+
+
+--A1L61 is reduce_or~121 at LCCOMB_X3_Y4_N16
+A1L61 = data[2] & data[0] & (data[1] # data[3]) # !data[2] & !data[3] & (data[1] # data[0]);
+
+
+--A1L62 is reduce_or~122 at LCCOMB_X3_Y4_N20
+A1L62 = data[2] & (data[1] & !data[0] # !data[1] & (data[0] # !data[3])) # !data[2] & (data[1] # data[3]);
+
+
+--temp is temp at LCFF_X3_Y4_N15
+temp = DFFEAS(A1L79, clk1khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--time1[0] is time1[0] at LCFF_X4_Y4_N31
+time1[0] = DFFEAS(A1L82, clk1hz,  ,  , !stop,  ,  ,  ,  );
+
+
+--time2[0] is time2[0] at LCFF_X3_Y4_N31
+time2[0] = DFFEAS(A1L94, clk1hz,  ,  , A1L90,  ,  ,  ,  );
+
+
+--A1L26 is data~48 at LCCOMB_X3_Y4_N24
+A1L26 = temp & (time1[0]) # !temp & time2[0];
+
+
+--time1[1] is time1[1] at LCFF_X4_Y4_N9
+time1[1] = DFFEAS(A1L86, clk1hz,  ,  , !stop,  ,  ,  ,  );
+
+
+--time2[1] is time2[1] at LCFF_X3_Y4_N7
+time2[1] = DFFEAS(A1L1, clk1hz,  ,  , A1L90,  ,  ,  ,  );
+
+
+--A1L27 is data~49 at LCCOMB_X3_Y4_N28
+A1L27 = temp & (time1[1]) # !temp & time2[1];
+
+
+--time1[2] is time1[2] at LCFF_X4_Y4_N21
+time1[2] = DFFEAS(A1L87, clk1hz,  ,  , !stop,  ,  ,  ,  );
+
+
+--time2[2] is time2[2] at LCFF_X3_Y4_N23
+time2[2] = DFFEAS(A1L95, clk1hz,  ,  , A1L90,  ,  ,  ,  );
+
+
+--A1L28 is data~50 at LCCOMB_X3_Y4_N12
+A1L28 = temp & time1[2] # !temp & (time2[2]);
+
+
+--time1[3] is time1[3] at LCFF_X4_Y4_N27
+time1[3] = DFFEAS(A1L2, clk1hz,  ,  , !stop,  ,  ,  ,  );
+
+
+--time2[3] is time2[3] at LCFF_X3_Y4_N27
+time2[3] = DFFEAS(A1L96, clk1hz,  ,  , A1L90,  ,  ,  ,  );
+
+
+--A1L29 is data~51 at LCCOMB_X3_Y4_N10
+A1L29 = temp & time1[3] # !temp & (time2[3]);
+
+
+--A1L3 is always3~404 at LCCOMB_X4_Y4_N16
+A1L3 = !time1[1] & !time1[2] # !time1[3];
+
+
+--flag is flag at LCFF_X4_Y4_N29
+flag = DFFEAS(A1L40, clk1hz,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L64 is rtl~52 at LCCOMB_X4_Y4_N18
+A1L64 = !time2[0] & !time2[1] & !time2[2];
+
+
+--A1L4 is always3~405 at LCCOMB_X4_Y4_N0
+A1L4 = !time1[3] & !time2[3] & !time1[2] & A1L64;
+
+
+--A1L12 is comb~453 at LCCOMB_X4_Y4_N10
+A1L12 = reset # A1L3 & (flag # A1L4);
+
+
+--A1L13 is comb~454 at LCCOMB_X4_Y4_N22
+A1L13 = !reset & !flag & A1L3 & !A1L4;
+
+
+--A1L14 is comb~455 at LCCOMB_X4_Y4_N12
+A1L14 = reset # A1L3 & (flag # !A1L4);
+
+
+--A1L15 is comb~456 at LCCOMB_X4_Y4_N14
+A1L15 = !reset & !flag & A1L3 & A1L4;
+
+
+--A1L11 is comb~11 at LCCOMB_X9_Y1_N0
+A1L11 = A1L3 & !reset & !flag;
+
+
+--A1L8 is comb~4 at LCCOMB_X9_Y1_N28
+A1L8 = reset # A1L3 & flag;
+
+
+--A1L16 is comb~457 at LCCOMB_X9_Y1_N22
+A1L16 = reset # A1L3 & (A1L4 # !flag);
+
+
+--A1L17 is comb~458 at LCCOMB_X9_Y1_N30
+A1L17 = A1L3 & !reset & flag & !A1L4;
+
+
+--A1L18 is comb~459 at LCCOMB_X9_Y1_N26
+A1L18 = !reset & (flag & A1L4 # !A1L3);
+
+
+--A1L7 is comb~2 at LCCOMB_X9_Y1_N16
+A1L7 = reset # !A1L4 # !flag # !A1L3;
+
+
+--A1L10 is comb~8 at LCCOMB_X8_Y3_N2
+A1L10 = reset # !A1L3 # !flag;
+
+
+--A1L19 is comb~460 at LCCOMB_X8_Y3_N10
+A1L19 = !reset & (flag # !A1L3);
+
+
+--A1L94 is time2~93 at LCCOMB_X3_Y4_N30
+A1L94 = !time2[0] & (time2[1] # time2[3] # time2[2]);
+
+
+--A1L65 is rtl~53 at LCCOMB_X4_Y4_N2
+A1L65 = !time1[1] & !time1[0];
+
+
+--A1L90 is time2[0]~94 at LCCOMB_X4_Y4_N6
+A1L90 = !stop & !time1[3] & !time1[2] & A1L65;
+
+
+--A1L86 is time1~111 at LCCOMB_X4_Y4_N8
+A1L86 = time1[1] & (time1[0]) # !time1[1] & !time1[0] & (time1[2] # time1[3]);
+
+
+--A1L1 is add~255 at LCCOMB_X3_Y4_N6
+A1L1 = time2[1] $ !time2[0];
+
+
+--A1L87 is time1~112 at LCCOMB_X4_Y4_N20
+A1L87 = time1[1] & (time1[2]) # !time1[1] & (time1[2] & (time1[0]) # !time1[2] & time1[3] & !time1[0]);
+
+
+--A1L95 is time2~95 at LCCOMB_X3_Y4_N22
+A1L95 = time2[1] & (time2[2]) # !time2[1] & (time2[2] & (time2[0]) # !time2[2] & time2[3] & !time2[0]);
+
+
+--A1L2 is add~256 at LCCOMB_X4_Y4_N26
+A1L2 = time1[3] $ (!time1[2] & !time1[1] & !time1[0]);
+
+
+--A1L96 is time2~96 at LCCOMB_X3_Y4_N26
+A1L96 = time2[3] & (time2[1] # time2[0] # time2[2]);
+
+
+--A1L40 is flag~81 at LCCOMB_X4_Y4_N28
+A1L40 = flag $ (A1L90 & !time2[3] & A1L64);
+
+
+--A1L74 is stop~157 at LCCOMB_X9_Y1_N18
+A1L74 = light[0]$latch & light[7]$latch & !light[5]$latch # !light[0]$latch & !light[7]$latch & light[5]$latch;
+
+
+--A1L75 is stop~158 at LCCOMB_X9_Y1_N6
+A1L75 = light[0]$latch & !light[2]$latch & !zhu & zhi # !light[0]$latch & light[2]$latch & (zhu # !zhi);
+
+
+--A1L76 is stop~159 at LCCOMB_X9_Y1_N2
+A1L76 = !light[1]$latch & A1L74 & !light[6]$latch & A1L75;
+
+
+--A1L20 is comb~461 at LCCOMB_X9_Y1_N10
+A1L20 = zhu & zhi;
+
+
+--A1L9 is comb~7 at LCCOMB_X9_Y1_N12
+A1L9 = zhi & !reset & zhu;
+
+
+--A1L79 is temp~2 at LCCOMB_X3_Y4_N14
+A1L79 = !temp;
+
+
+--A1L82 is time1[0]~113 at LCCOMB_X4_Y4_N30
+A1L82 = !time1[0];
+
+
+--light[0]$latch is light[0]$latch at LCCOMB_X4_Y4_N4
+light[0]$latch = !A1L12 & (A1L13 # light[0]$latch);
+
+
+--light[1]$latch is light[1]$latch at LCCOMB_X4_Y4_N24
+light[1]$latch = !A1L14 & (A1L15 # light[1]$latch);
+
+
+--light[2]$latch is light[2]$latch at LCCOMB_X9_Y1_N14
+light[2]$latch = !A1L11 & (A1L8 # light[2]$latch);
+
+
+--light[5]$latch is light[5]$latch at LCCOMB_X9_Y1_N4
+light[5]$latch = !A1L16 & (A1L17 # light[5]$latch);
+
+
+--light[6]$latch is light[6]$latch at LCCOMB_X9_Y1_N20
+light[6]$latch = A1L18 & (light[6]$latch # !A1L7);
+
+
+--light[7]$latch is light[7]$latch at LCCOMB_X8_Y3_N12
+light[7]$latch = A1L10 & (light[7]$latch # !A1L19);
+
+
+--stop is stop at LCCOMB_X9_Y1_N8
+stop = !A1L9 & (reset # A1L77);
+
+
+--A1L77 is stop~160 at LCCOMB_X9_Y1_N24
+A1L77 = A1L20 & (stop) # !A1L20 & A1L76;
+
+
+--clk1khz is clk1khz at PIN_70
+--operation mode is input
+
+clk1khz = INPUT();
+
+
+--reset is reset at PIN_63
+--operation mode is input
+
+reset = INPUT();
+
+
+--clk1hz is clk1hz at PIN_71
+--operation mode is input
+
+clk1hz = INPUT();
+
+
+--zhi is zhi at PIN_64
+--operation mode is input
+
+zhi = INPUT();
+
+
+--zhu is zhu at PIN_65
+--operation mode is input
+
+zhu = INPUT();
+
+
+--dout[0] is dout[0] at PIN_24
+--operation mode is output
+
+dout[0] = OUTPUT(!A1L56);
+
+
+--dout[1] is dout[1] at PIN_25
+--operation mode is output
+
+dout[1] = OUTPUT(!A1L57);
+
+
+--dout[2] is dout[2] at PIN_26
+--operation mode is output
+
+dout[2] = OUTPUT(!A1L58);
+
+
+--dout[3] is dout[3] at PIN_27
+--operation mode is output
+
+dout[3] = OUTPUT(!A1L59);
+
+
+--dout[4] is dout[4] at PIN_28
+--operation mode is output
+
+dout[4] = OUTPUT(!A1L60);
+
+
+--dout[5] is dout[5] at PIN_30
+--operation mode is output
+
+dout[5] = OUTPUT(!A1L61);
+
+
+--dout[6] is dout[6] at PIN_31
+--operation mode is output
+
+dout[6] = OUTPUT(A1L62);
+
+
+--dout[7] is dout[7] at PIN_32
+--operation mode is output
+
+dout[7] = OUTPUT(GND);
+
+
+--scan[0] is scan[0] at PIN_45
+--operation mode is output
+
+scan[0] = OUTPUT(!temp);
+
+
+--scan[1] is scan[1] at PIN_44
+--operation mode is output
+
+scan[1] = OUTPUT(temp);
+
+
+--scan[2] is scan[2] at PIN_43
+--operation mode is output
+
+scan[2] = OUTPUT(GND);
+
+
+--scan[3] is scan[3] at PIN_42
+--operation mode is output
+
+scan[3] = OUTPUT(GND);
+
+
+--scan[4] is scan[4] at PIN_41
+--operation mode is output
+
+scan[4] = OUTPUT(GND);
+
+
+--scan[5] is scan[5] at PIN_40
+--operation mode is output
+
+scan[5] = OUTPUT(GND);
+
+
+--light[0] is light[0] at PIN_60
+--operation mode is output
+
+light[0] = OUTPUT(light[0]$latch);
+
+
+--light[1] is light[1] at PIN_59
+--operation mode is output
+
+light[1] = OUTPUT(light[1]$latch);
+
+
+--light[2] is light[2] at PIN_58
+--operation mode is output
+
+light[2] = OUTPUT(light[2]$latch);
+
+
+--light[3] is light[3] at PIN_57
+--operation mode is output
+
+light[3] = OUTPUT(GND);
+
+
+--light[4] is light[4] at PIN_55
+--operation mode is output
+
+light[4] = OUTPUT(GND);
+
+
+--light[5] is light[5] at PIN_53
+--operation mode is output
+
+light[5] = OUTPUT(light[5]$latch);
+
+
+--light[6] is light[6] at PIN_52
+--operation mode is output
+
+light[6] = OUTPUT(light[6]$latch);
+
+
+--light[7] is light[7] at PIN_51
+--operation mode is output
+
+light[7] = OUTPUT(light[7]$latch);
+
+
+
+
+

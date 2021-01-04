@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 5.521 ns
+From           : kbclk
+To             : clk1
+From Clock     : --
+To Clock       : clkin
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 15.383 ns
+From           : altsyncram:reduce_or_rtl_0|altsyncram_u9m:auto_generated|ram_block1a0~porta_address_reg7
+To             : dout[0]
+From Clock     : clkin
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -1.671 ns
+From           : check
+To             : m[3]
+From Clock     : --
+To Clock       : clkin
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clkin'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 180.05 MHz ( period = 5.554 ns )
+From           : m[0]
+To             : altsyncram:reduce_or_rtl_0|altsyncram_u9m:auto_generated|ram_block1a0~porta_address_reg0
+From Clock     : clkin
+To Clock       : clkin
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

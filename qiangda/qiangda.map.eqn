@@ -1,0 +1,621 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L117 is reduce_or~136
+A1L117 = dat[2] & !dat[1] & (dat[0] $ !dat[3]) # !dat[2] & dat[0] & (dat[1] $ !dat[3]);
+
+
+--A1L118 is reduce_or~137
+A1L118 = dat[1] & (dat[0] & (dat[3]) # !dat[0] & dat[2]) # !dat[1] & dat[2] & (dat[0] $ dat[3]);
+
+
+--A1L119 is reduce_or~138
+A1L119 = dat[2] & dat[3] & (dat[1] # !dat[0]) # !dat[2] & !dat[0] & dat[1] & !dat[3];
+
+
+--A1L120 is reduce_or~139
+A1L120 = dat[1] & (dat[0] & dat[2] # !dat[0] & !dat[2] & dat[3]) # !dat[1] & !dat[3] & (dat[0] $ dat[2]);
+
+
+--A1L121 is reduce_or~140
+A1L121 = dat[1] & dat[0] & (!dat[3]) # !dat[1] & (dat[2] & (!dat[3]) # !dat[2] & dat[0]);
+
+
+--A1L122 is reduce_or~141
+A1L122 = dat[0] & (dat[3] $ (dat[1] # !dat[2])) # !dat[0] & dat[1] & !dat[2] & !dat[3];
+
+
+--A1L123 is reduce_or~142
+A1L123 = dat[0] & (dat[3] # dat[1] $ dat[2]) # !dat[0] & (dat[1] # dat[2] $ dat[3]);
+
+
+--cnt[2] is cnt[2]
+cnt[2] = DFFEAS(A1L43, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--cnt[0] is cnt[0]
+cnt[0] = DFFEAS(A1L40, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--cnt[1] is cnt[1]
+cnt[1] = DFFEAS(A1L44, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L1 is Decoder~147
+A1L1 = cnt[2] & !cnt[0] & !cnt[1];
+
+
+--A1L2 is Decoder~148
+A1L2 = cnt[0] & !cnt[2] & !cnt[1];
+
+
+--A1L3 is Decoder~149
+A1L3 = cnt[1] & !cnt[0] & !cnt[2];
+
+
+--A1L4 is Decoder~150
+A1L4 = cnt[0] & cnt[1] & !cnt[2];
+
+
+--A1L8Q is LED[0]~reg0
+A1L8Q = DFFEAS(A1L16, clk100khz,  ,  , A1L128,  ,  ,  ,  );
+
+
+--A1L10Q is LED[1]~reg0
+A1L10Q = DFFEAS(A1L17, clk100khz,  ,  , A1L128,  ,  ,  ,  );
+
+
+--A1L12Q is LED[2]~reg0
+A1L12Q = DFFEAS(A1L18, clk100khz,  ,  , A1L128,  ,  ,  ,  );
+
+
+--A1L15Q is LED[3]~reg0
+A1L15Q = DFFEAS(A1L14, clk100khz,  ,  , A1L128,  ,  ,  ,  );
+
+
+--count_one[0] is count_one[0]
+count_one[0] = DFFEAS(A1L51, clk1hz, !A1L89,  ,  ,  ,  ,  ,  );
+
+
+--data[0] is data[0]
+data[0] = DFFEAS(A1L93, clk100khz,  ,  , A1L90,  ,  , reset,  );
+
+
+--data1[0] is data1[0]
+data1[0] = DFFEAS(A1L87, clk100khz,  ,  , A1L113,  ,  , reset,  );
+
+
+--A1L19 is Select~135
+A1L19 = cnt[1] & (cnt[0]) # !cnt[1] & (cnt[0] & data[0] # !cnt[0] & (data1[0]));
+
+
+--count_ten[0] is count_ten[0]
+count_ten[0] = DFFEAS(A1L65, clk1hz, !A1L89,  ,  , count_ten[0],  ,  , A1L67);
+
+
+--A1L20 is Select~136
+A1L20 = cnt[1] & (A1L19 & (count_ten[0]) # !A1L19 & !count_one[0]) # !cnt[1] & (A1L19);
+
+
+--A1L124 is reduce_or~143
+A1L124 = cnt[2] $ (cnt[0] # cnt[1]);
+
+
+--count_one[1] is count_one[1]
+count_one[1] = DFFEAS(A1L53, clk1hz, !A1L89,  ,  , count_one[1],  ,  , A1L50);
+
+
+--data[1] is data[1]
+data[1] = DFFEAS(A1L94, clk100khz,  ,  , A1L90,  ,  , reset,  );
+
+
+--data1[1] is data1[1]
+data1[1] = DFFEAS(A1L95, clk100khz,  ,  , A1L113,  ,  , reset,  );
+
+
+--A1L21 is Select~137
+A1L21 = cnt[1] & (cnt[0]) # !cnt[1] & (cnt[0] & data[1] # !cnt[0] & (data1[1]));
+
+
+--count_ten[1] is count_ten[1]
+count_ten[1] = DFFEAS(A1L69, clk1hz, !A1L89,  ,  , count_ten[1],  ,  , A1L67);
+
+
+--A1L22 is Select~138
+A1L22 = cnt[1] & (A1L21 & (count_ten[1]) # !A1L21 & count_one[1]) # !cnt[1] & (A1L21);
+
+
+--data[2] is data[2]
+data[2] = DFFEAS(A1L96, clk100khz,  ,  , A1L90,  ,  , reset,  );
+
+
+--count_one[2] is count_one[2]
+count_one[2] = DFFEAS(A1L58, clk1hz, !A1L89,  ,  ,  ,  ,  ,  );
+
+
+--data1[2] is data1[2]
+data1[2] = DFFEAS(A1L114, clk100khz,  ,  , A1L113,  ,  , reset,  );
+
+
+--A1L23 is Select~139
+A1L23 = cnt[0] & (cnt[1]) # !cnt[0] & (cnt[1] & !count_one[2] # !cnt[1] & (data1[2]));
+
+
+--count_ten[2] is count_ten[2]
+count_ten[2] = DFFEAS(A1L72, clk1hz, !A1L89,  ,  , count_ten[2],  ,  , A1L67);
+
+
+--A1L24 is Select~140
+A1L24 = cnt[0] & (A1L23 & (count_ten[2]) # !A1L23 & data[2]) # !cnt[0] & (A1L23);
+
+
+--A1L5 is Decoder~151
+A1L5 = cnt[1] & !cnt[2];
+
+
+--count_ten[3] is count_ten[3]
+count_ten[3] = DFFEAS(A1L75, clk1hz, !A1L89,  ,  , count_ten[3],  ,  , A1L67);
+
+
+--count_one[3] is count_one[3]
+count_one[3] = DFFEAS(A1L60, clk1hz, !A1L89,  ,  , count_one[3],  ,  , A1L50);
+
+
+--A1L25 is Select~141
+A1L25 = A1L5 & (cnt[0] & count_ten[3] # !cnt[0] & (count_one[3]));
+
+
+--A1L43 is cnt~71
+A1L43 = cnt[2] & (!cnt[0]) # !cnt[2] & cnt[1] & cnt[0];
+
+
+--A1L44 is cnt~72
+A1L44 = cnt[1] & (!cnt[0]) # !cnt[1] & !cnt[2] & cnt[0];
+
+
+--A1L16 is LED~64
+A1L16 = !input4 & input1 & input2 & input3;
+
+
+--count_flag is count_flag
+count_flag = DFFEAS(A1L46, clk1hz, !A1L89,  ,  ,  ,  ,  ,  );
+
+
+--input_flag is input_flag
+input_flag = DFFEAS(A1L116, clk100khz,  ,  ,  ,  ,  , reset,  );
+
+
+--A1L128 is rtl~89
+A1L128 = !reset & (!count_flag & !input_flag # !clr);
+
+
+--A1L17 is LED~65
+A1L17 = !input3 & input1 & input2;
+
+
+--A1L18 is LED~66
+A1L18 = !input2 & input1;
+
+
+--time_one[0] is time_one[0]
+time_one[0] = DFFEAS(A1L144, clk1hz, !reset,  , A1L140,  ,  ,  ,  );
+
+
+--input_flag1 is input_flag1
+input_flag1 = DFFEAS(A1L115, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L31 is always0~1
+A1L31 = input_flag & !count_flag & !input_flag1;
+
+
+--A1L49 is count_one[0]~806
+A1L49 = !count_ten[0] & !count_ten[1] & !count_ten[2] & !count_ten[3];
+
+
+--A1L126 is rtl~3
+A1L126 = count_one[0] & count_one[2] & !count_one[1] & !count_one[3];
+
+
+--A1L32 is always0~50
+A1L32 = !count_flag & !input_flag1;
+
+
+--A1L50 is count_one[0]~807
+A1L50 = A1L49 & A1L126 & !input_flag # !A1L32;
+
+
+--A1L51 is count_one[0]~808
+A1L51 = A1L50 & (count_one[0]) # !A1L50 & (A1L31 & !time_one[0] # !A1L31 & (!count_one[0]));
+
+
+--A1L89 is data[0]~177
+A1L89 = reset # !clr;
+
+
+--A1L93 is data~178
+A1L93 = clr & (input2 & !input3 # !input1);
+
+
+--A1L112 is input_flag1~164
+A1L112 = input4 & input1 & input2 & input3;
+
+
+--A1L90 is data[0]~179
+A1L90 = A1L89 # !count_flag & !input_flag & !A1L112;
+
+
+--A1L87 is data1~95
+A1L87 = input2 & !input3 # !input1;
+
+
+--A1L113 is input_flag1~165
+A1L113 = reset # !clr & !A1L112;
+
+
+--time_ten[0] is time_ten[0]
+time_ten[0] = DFFEAS(A1L151, clk1hz, !reset,  , A1L150,  ,  ,  ,  );
+
+
+--A1L65 is count_ten[0]~72
+A1L65 = A1L31 & (!time_ten[0]) # !A1L31 & !count_ten[0];
+
+
+--A1L67 is count_ten[0]~164
+A1L67 = !input_flag & (A1L49 # !A1L126) # !A1L32;
+
+
+--A1L62 is count_one~809
+A1L62 = count_one[0] & (count_one[1] # count_one[2] & !count_one[3]) # !count_one[0] & !count_one[1];
+
+
+--time_one[1] is time_one[1]
+time_one[1] = DFFEAS(A1L145, clk1hz, !reset,  , A1L140,  ,  ,  ,  );
+
+
+--A1L53 is count_one[1]~225
+A1L53 = A1L31 & (time_one[1]) # !A1L31 & !A1L62;
+
+
+--A1L94 is data~180
+A1L94 = input1 & clr & (!input3 # !input2);
+
+
+--A1L95 is data~181
+A1L95 = input1 & (!input3 # !input2);
+
+
+--A1L26 is add~521
+A1L26 = count_ten[0] $ count_ten[1];
+
+
+--time_ten[1] is time_ten[1]
+time_ten[1] = DFFEAS(A1L30, clk1hz, !reset,  , A1L150,  ,  ,  ,  );
+
+
+--A1L69 is count_ten[1]~73
+A1L69 = A1L31 & (!time_ten[1]) # !A1L31 & !A1L26;
+
+
+--A1L96 is data~182
+A1L96 = input1 & input2 & input3 & clr;
+
+
+--time_one[2] is time_one[2]
+time_one[2] = DFFEAS(A1L146, clk1hz, !reset,  , A1L140,  ,  ,  ,  );
+
+
+--A1L56 is count_one[2]~810
+A1L56 = count_one[0] & (count_one[1] & (!count_one[2]) # !count_one[1] & count_one[3] & count_one[2]) # !count_one[0] & (!count_one[2]);
+
+
+--A1L57 is count_one[2]~811
+A1L57 = input_flag & (A1L32 & time_one[2] # !A1L32 & (A1L56)) # !input_flag & (A1L56);
+
+
+--A1L58 is count_one[2]~812
+A1L58 = A1L50 & (count_one[2]) # !A1L50 & !A1L57;
+
+
+--A1L114 is input_flag1~166
+A1L114 = input1 & input2 & input3;
+
+
+--A1L27 is add~522
+A1L27 = count_ten[2] $ (count_ten[0] # count_ten[1]);
+
+
+--time_ten[2] is time_ten[2]
+time_ten[2] = DFFEAS(A1L155, clk1hz, !reset,  , A1L150,  ,  ,  ,  );
+
+
+--A1L72 is count_ten[2]~74
+A1L72 = A1L31 & (time_ten[2]) # !A1L31 & !A1L27;
+
+
+--A1L28 is add~523
+A1L28 = count_ten[3] $ (count_ten[0] # count_ten[1] # count_ten[2]);
+
+
+--time_ten[3] is time_ten[3]
+time_ten[3] = DFFEAS(A1L156, clk1hz, !reset,  , A1L150,  ,  ,  ,  );
+
+
+--A1L75 is count_ten[3]~75
+A1L75 = A1L31 & (time_ten[3]) # !A1L31 & !A1L28;
+
+
+--A1L29 is add~524
+A1L29 = count_one[3] $ (count_one[1] # !count_one[2] # !count_one[0]);
+
+
+--time_one[3] is time_one[3]
+time_one[3] = DFFEAS(A1L147, clk1hz, !reset,  , A1L140,  ,  ,  ,  );
+
+
+--A1L60 is count_one[3]~226
+A1L60 = A1L31 & (time_one[3]) # !A1L31 & !A1L29;
+
+
+--A1L129 is rtl~90
+A1L129 = A1L49 & A1L126 & !input_flag & !input_flag1;
+
+
+--A1L127 is rtl~7
+A1L127 = !time_one[0] & !time_one[1] & !time_one[2] & !time_one[3];
+
+
+--A1L33 is always0~51
+A1L33 = time_ten[0] & time_ten[1] & !time_ten[2];
+
+
+--A1L34 is always0~52
+A1L34 = A1L127 & A1L33 & !time_ten[3];
+
+
+--A1L46 is count_flag~68
+A1L46 = count_flag # A1L129 # A1L31 & A1L34;
+
+
+--A1L116 is input_flag~104
+A1L116 = input_flag # clr & !count_flag & !A1L112;
+
+
+--A1L144 is time_one~346
+A1L144 = A1L127 & (time_ten[3] # !A1L33) # !A1L127 & (!time_one[0]);
+
+
+--A1L140 is time_one[0]~347
+A1L140 = clr & input_flag & !count_flag & !input_flag1;
+
+
+--A1L115 is input_flag1~167
+A1L115 = !reset & (input_flag1 # !clr & !A1L112);
+
+
+--A1L130 is rtl~91
+A1L130 = !time_one[0] & !time_one[1] & !time_one[2];
+
+
+--A1L150 is time_ten[0]~251
+A1L150 = clr & A1L31 & A1L130 & !time_one[3];
+
+
+--A1L145 is time_one~348
+A1L145 = time_one[0] & (time_one[1]) # !time_one[0] & !time_one[1] & (time_one[2] # time_one[3]);
+
+
+--A1L30 is add~525
+A1L30 = time_ten[0] $ time_ten[1];
+
+
+--A1L146 is time_one~349
+A1L146 = time_one[2] & (time_one[0] # time_one[1]) # !time_one[2] & !time_one[0] & !time_one[1] & time_one[3];
+
+
+--A1L155 is time_ten~252
+A1L155 = !A1L34 & (time_ten[2] $ (time_ten[0] & time_ten[1]));
+
+
+--A1L156 is time_ten~253
+A1L156 = A1L33 & !A1L127 & !time_ten[3] # !A1L33 & (time_ten[3]);
+
+
+--A1L147 is time_one~350
+A1L147 = time_one[3] & (!A1L130) # !time_one[3] & A1L130 & (time_ten[3] # !A1L33);
+
+
+--A1L40 is cnt[0]~73
+A1L40 = !cnt[0];
+
+
+--A1L14 is LED[3]~70
+A1L14 = !input1;
+
+
+--A1L151 is time_ten[0]~254
+A1L151 = !time_ten[0];
+
+
+--dat[0] is dat[0]
+dat[0] = A1L124 & A1L20 # !A1L124 & (dat[0]);
+
+
+--dat[1] is dat[1]
+dat[1] = A1L124 & A1L22 # !A1L124 & (dat[1]);
+
+
+--dat[2] is dat[2]
+dat[2] = A1L124 & A1L24 # !A1L124 & (dat[2]);
+
+
+--dat[3] is dat[3]
+dat[3] = A1L124 & A1L25 # !A1L124 & (dat[3]);
+
+
+--clk100khz is clk100khz
+--operation mode is input
+
+clk100khz = INPUT();
+
+
+--input4 is input4
+--operation mode is input
+
+input4 = INPUT();
+
+
+--input1 is input1
+--operation mode is input
+
+input1 = INPUT();
+
+
+--input2 is input2
+--operation mode is input
+
+input2 = INPUT();
+
+
+--input3 is input3
+--operation mode is input
+
+input3 = INPUT();
+
+
+--clr is clr
+--operation mode is input
+
+clr = INPUT();
+
+
+--reset is reset
+--operation mode is input
+
+reset = INPUT();
+
+
+--clk1hz is clk1hz
+--operation mode is input
+
+clk1hz = INPUT();
+
+
+--dout[0] is dout[0]
+--operation mode is output
+
+dout[0] = OUTPUT(!A1L117);
+
+
+--dout[1] is dout[1]
+--operation mode is output
+
+dout[1] = OUTPUT(!A1L118);
+
+
+--dout[2] is dout[2]
+--operation mode is output
+
+dout[2] = OUTPUT(!A1L119);
+
+
+--dout[3] is dout[3]
+--operation mode is output
+
+dout[3] = OUTPUT(!A1L120);
+
+
+--dout[4] is dout[4]
+--operation mode is output
+
+dout[4] = OUTPUT(!A1L121);
+
+
+--dout[5] is dout[5]
+--operation mode is output
+
+dout[5] = OUTPUT(!A1L122);
+
+
+--dout[6] is dout[6]
+--operation mode is output
+
+dout[6] = OUTPUT(A1L123);
+
+
+--dout[7] is dout[7]
+--operation mode is output
+
+dout[7] = OUTPUT(GND);
+
+
+--scan[0] is scan[0]
+--operation mode is output
+
+scan[0] = OUTPUT(A1L1);
+
+
+--scan[1] is scan[1]
+--operation mode is output
+
+scan[1] = OUTPUT(GND);
+
+
+--scan[2] is scan[2]
+--operation mode is output
+
+scan[2] = OUTPUT(A1L2);
+
+
+--scan[3] is scan[3]
+--operation mode is output
+
+scan[3] = OUTPUT(GND);
+
+
+--scan[4] is scan[4]
+--operation mode is output
+
+scan[4] = OUTPUT(A1L3);
+
+
+--scan[5] is scan[5]
+--operation mode is output
+
+scan[5] = OUTPUT(A1L4);
+
+
+--LED[0] is LED[0]
+--operation mode is output
+
+LED[0] = OUTPUT(A1L8Q);
+
+
+--LED[1] is LED[1]
+--operation mode is output
+
+LED[1] = OUTPUT(A1L10Q);
+
+
+--LED[2] is LED[2]
+--operation mode is output
+
+LED[2] = OUTPUT(A1L12Q);
+
+
+--LED[3] is LED[3]
+--operation mode is output
+
+LED[3] = OUTPUT(A1L15Q);
+
+

@@ -1,0 +1,307 @@
+Analysis & Synthesis report for ps2m_jc
+Thu May 24 15:39:17 2018
+Version 5.1 Build 176 10/26/2005 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Analysis & Synthesis RAM Summary
+  8. General Register Statistics
+  9. Source assignments for altsyncram:reduce_or_rtl_0|altsyncram_u9m:auto_generated
+ 10. Parameter Settings for Inferred Entity Instance: altsyncram:reduce_or_rtl_0
+ 11. Analysis & Synthesis Equations
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2005 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++------------------------------------+------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu May 24 15:39:17 2018    ;
+; Quartus II Version                 ; 5.1 Build 176 10/26/2005 SJ Full Version ;
+; Revision Name                      ; ps2m_jc                                  ;
+; Top-level Entity Name              ; ps2m_jc                                  ;
+; Family                             ; Cyclone II                               ;
+; Total combinational functions      ; 14                                       ;
+; Total registers                    ; 31                                       ;
+; Total pins                         ; 17                                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 1,792                                    ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
++------------------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                             ; Setting            ; Default Value      ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                             ; EP2C5T144C8        ;                    ;
+; Top-level entity name                                              ; ps2m_jc            ; ps2m_jc            ;
+; Family name                                                        ; Cyclone II         ; Stratix            ;
+; Use smart compilation                                              ; Off                ; Off                ;
+; Restructure Multiplexers                                           ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                ; Off                ; Off                ;
+; Preserve fewer node names                                          ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                          ; Off                ; Off                ;
+; Verilog Version                                                    ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                       ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                           ; Auto               ; Auto               ;
+; Extract Verilog State Machines                                     ; On                 ; On                 ;
+; Extract VHDL State Machines                                        ; On                 ; On                 ;
+; Add Pass-Through Logic to Inferred RAMs                            ; On                 ; On                 ;
+; DSP Block Balancing                                                ; Auto               ; Auto               ;
+; Maximum DSP Block Usage                                            ; -1                 ; -1                 ;
+; NOT Gate Push-Back                                                 ; On                 ; On                 ;
+; Power-Up Don't Care                                                ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                       ; Off                ; Off                ;
+; Remove Duplicate Registers                                         ; On                 ; On                 ;
+; Ignore CARRY Buffers                                               ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                             ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                              ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore LCELL Buffers                                               ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                     ; Off                ; Off                ;
+; Optimization Technique -- Cyclone II                               ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II ; 70                 ; 70                 ;
+; Auto Carry Chains                                                  ; On                 ; On                 ;
+; Auto Open-Drain Pins                                               ; On                 ; On                 ;
+; Remove Duplicate Logic                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                              ; Off                ; Off                ;
+; Perform gate-level register retiming                               ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax             ; On                 ; On                 ;
+; Auto ROM Replacement                                               ; On                 ; On                 ;
+; Auto RAM Replacement                                               ; On                 ; On                 ;
+; Auto Shift Register Replacement                                    ; On                 ; On                 ;
+; Auto Clock Enable Replacement                                      ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                  ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                             ; Off                ; Off                ;
+; Auto Resource Sharing                                              ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                      ; Off                ; Off                ;
+; Maximum Number of M4K Memory Blocks                                ; -1                 ; -1                 ;
+; Ignore translate_off and translate_on Synthesis Directives         ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                 ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                   ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                       ; Normal compilation ; Normal compilation ;
+; HDL message level                                                  ; Level2             ; Level2             ;
++--------------------------------------------------------------------+--------------------+--------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                      ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------+
+; ps2m_jc.v                        ; yes             ; User Verilog HDL File        ; E:/ps2m_jc/ps2m_jc.v                                              ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/quartus51/libraries/megafunctions/altsyncram.tdf        ;
+; stratix_ram_block.inc            ; yes             ; Other                        ; c:/altera/quartus51/libraries/megafunctions/stratix_ram_block.inc ;
+; lpm_mux.inc                      ; yes             ; Other                        ; c:/altera/quartus51/libraries/megafunctions/lpm_mux.inc           ;
+; lpm_decode.inc                   ; yes             ; Other                        ; c:/altera/quartus51/libraries/megafunctions/lpm_decode.inc        ;
+; aglobal51.inc                    ; yes             ; Other                        ; c:/altera/quartus51/libraries/megafunctions/aglobal51.inc         ;
+; altsyncram.inc                   ; yes             ; Other                        ; c:/altera/quartus51/libraries/megafunctions/altsyncram.inc        ;
+; a_rdenreg.inc                    ; yes             ; Other                        ; c:/altera/quartus51/libraries/megafunctions/a_rdenreg.inc         ;
+; altrom.inc                       ; yes             ; Other                        ; c:/altera/quartus51/libraries/megafunctions/altrom.inc            ;
+; altram.inc                       ; yes             ; Other                        ; c:/altera/quartus51/libraries/megafunctions/altram.inc            ;
+; altdpram.inc                     ; yes             ; Other                        ; c:/altera/quartus51/libraries/megafunctions/altdpram.inc          ;
+; altqpram.inc                     ; yes             ; Other                        ; c:/altera/quartus51/libraries/megafunctions/altqpram.inc          ;
+; db/altsyncram_u9m.tdf            ; yes             ; Auto-Generated Megafunction  ; E:/ps2m_jc/db/altsyncram_u9m.tdf                                  ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total combinational functions               ; 14    ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 5     ;
+;     -- 3 input functions                    ; 9     ;
+;     -- <=2 input functions                  ; 0     ;
+;         -- Combinational cells for routing  ; 0     ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 14    ;
+;     -- arithmetic mode                      ; 0     ;
+; Total registers                             ; 31    ;
+; I/O pins                                    ; 17    ;
+; Total memory bits                           ; 1792  ;
+; Maximum fan-out node                        ; clk1  ;
+; Maximum fan-out                             ; 37    ;
+; Total fan-out                               ; 207   ;
+; Average fan-out                             ; 3.00  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                   ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------+
+; Compilation Hierarchy Node            ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                               ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------+
+; |ps2m_jc                              ; 14 (14)           ; 31 (31)      ; 1792        ; 0            ; 0       ; 0         ; 17   ; 0            ; |ps2m_jc                                                          ;
+;    |altsyncram:reduce_or_rtl_0|       ; 0 (0)             ; 0 (0)        ; 1792        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2m_jc|altsyncram:reduce_or_rtl_0                               ;
+;       |altsyncram_u9m:auto_generated| ; 0 (0)             ; 0 (0)        ; 1792        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2m_jc|altsyncram:reduce_or_rtl_0|altsyncram_u9m:auto_generated ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                        ;
++---------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------------+
+; Name                                                                ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF              ;
++---------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------------+
+; altsyncram:reduce_or_rtl_0|altsyncram_u9m:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 256          ; 7            ; --           ; --           ; 1792 ; ps2m_jc0.rtl.mif ;
++---------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 31    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 20    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------+
+; Source assignments for altsyncram:reduce_or_rtl_0|altsyncram_u9m:auto_generated ;
++---------------------------------+--------------------+------+-------------------+
+; Assignment                      ; Value              ; from ; to                ;
++---------------------------------+--------------------+------+-------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                 ;
++---------------------------------+--------------------+------+-------------------+
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: altsyncram:reduce_or_rtl_0 ;
++------------------------------------+------------------+---------------------+
+; Parameter Name                     ; Value            ; Type                ;
++------------------------------------+------------------+---------------------+
+; BYTE_SIZE_BLOCK                    ; 8                ; Untyped             ;
+; AUTO_CARRY_CHAINS                  ; ON               ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS               ; OFF              ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                ; ON               ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF              ; IGNORE_CASCADE      ;
+; OPERATION_MODE                     ; ROM              ; Untyped             ;
+; WIDTH_A                            ; 7                ; Untyped             ;
+; WIDTHAD_A                          ; 8                ; Untyped             ;
+; NUMWORDS_A                         ; 256              ; Untyped             ;
+; OUTDATA_REG_A                      ; UNREGISTERED     ; Untyped             ;
+; ADDRESS_ACLR_A                     ; NONE             ; Untyped             ;
+; OUTDATA_ACLR_A                     ; NONE             ; Untyped             ;
+; WRCONTROL_ACLR_A                   ; NONE             ; Untyped             ;
+; INDATA_ACLR_A                      ; NONE             ; Untyped             ;
+; BYTEENA_ACLR_A                     ; NONE             ; Untyped             ;
+; WIDTH_B                            ; 1                ; Untyped             ;
+; WIDTHAD_B                          ; 1                ; Untyped             ;
+; NUMWORDS_B                         ; 1                ; Untyped             ;
+; INDATA_REG_B                       ; CLOCK1           ; Untyped             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1           ; Untyped             ;
+; RDCONTROL_REG_B                    ; CLOCK1           ; Untyped             ;
+; ADDRESS_REG_B                      ; CLOCK1           ; Untyped             ;
+; OUTDATA_REG_B                      ; UNREGISTERED     ; Untyped             ;
+; BYTEENA_REG_B                      ; CLOCK1           ; Untyped             ;
+; INDATA_ACLR_B                      ; NONE             ; Untyped             ;
+; WRCONTROL_ACLR_B                   ; NONE             ; Untyped             ;
+; ADDRESS_ACLR_B                     ; NONE             ; Untyped             ;
+; OUTDATA_ACLR_B                     ; NONE             ; Untyped             ;
+; RDCONTROL_ACLR_B                   ; NONE             ; Untyped             ;
+; BYTEENA_ACLR_B                     ; NONE             ; Untyped             ;
+; WIDTH_BYTEENA_A                    ; 1                ; Untyped             ;
+; WIDTH_BYTEENA_B                    ; 1                ; Untyped             ;
+; RAM_BLOCK_TYPE                     ; AUTO             ; Untyped             ;
+; BYTE_SIZE                          ; 8                ; Untyped             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE        ; Untyped             ;
+; INIT_FILE                          ; ps2m_jc0.rtl.mif ; Untyped             ;
+; INIT_FILE_LAYOUT                   ; PORT_A           ; Untyped             ;
+; MAXIMUM_DEPTH                      ; 0                ; Untyped             ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL           ; Untyped             ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL           ; Untyped             ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL           ; Untyped             ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL           ; Untyped             ;
+; DEVICE_FAMILY                      ; Cyclone II       ; Untyped             ;
+; CBXI_PARAMETER                     ; altsyncram_u9m   ; Untyped             ;
++------------------------------------+------------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------+
+; Analysis & Synthesis Equations ;
++--------------------------------+
+The equations can be found in E:/ps2m_jc/ps2m_jc.map.eqn.
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 5.1 Build 176 10/26/2005 SJ Full Version
+    Info: Processing started: Thu May 24 15:39:16 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ps2m_jc -c ps2m_jc
+Warning (10268): Verilog HDL information at ps2m_jc.v(60): Always Construct contains both blocking and non-blocking assignments
+Info: Found 1 design units, including 1 entities, in source file ps2m_jc.v
+    Info: Found entity 1: ps2m_jc
+Info: Elaborating entity "ps2m_jc" for the top level hierarchy
+Warning (10235): Verilog HDL Always Construct warning at ps2m_jc.v(62): variable "s" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ps2m_jc.v(62): variable "c" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning: Created node "reduce_or~14" as a ROM by generating altsyncram megafunction to implement register logic with M512 or M4K memory block. Power-up state differs from the original design.
+Info: Inferred 1 megafunctions from design logic
+    Info: Inferred altsyncram megafunction (OPERATION_MODE=ROM, NUMWORDS_A=256, WIDTH_A=7) from the following design logic: "reduce_or~14"
+Info: Found 1 design units, including 1 entities, in source file c:/altera/quartus51/libraries/megafunctions/altsyncram.tdf
+    Info: Found entity 1: altsyncram
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_u9m.tdf
+    Info: Found entity 1: altsyncram_u9m
+Warning: Output pins are stuck at VCC or GND
+    Warning: Pin "dout[7]" stuck at GND
+    Warning: Pin "jgout[1]" stuck at VCC
+    Warning: Pin "jgout[2]" stuck at GND
+    Warning: Pin "jgout[3]" stuck at VCC
+Warning: Design contains 1 input pin(s) that do not drive logic
+    Warning: No output dependent on input pin "rst"
+Info: Implemented 60 device resources after synthesis - the final resource count might be different
+    Info: Implemented 5 input pins
+    Info: Implemented 12 output pins
+    Info: Implemented 36 logic cells
+    Info: Implemented 7 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Processing ended: Thu May 24 15:39:17 2018
+    Info: Elapsed time: 00:00:01
+
+

@@ -1,0 +1,884 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L189Q is light[0]~reg0
+A1L189Q = DFFEAS(A1L187, clk,  ,  ,  , A1L219,  ,  , !flag.00);
+
+
+--A1L193Q is light[1]~reg0
+A1L193Q = DFFEAS(A1L191, clk,  ,  , A1L180, A1L219,  ,  , !flag.00);
+
+
+--A1L197Q is light[2]~reg0
+A1L197Q = DFFEAS(A1L195, clk,  ,  , A1L180, A1L219,  ,  , !flag.00);
+
+
+--A1L201Q is light[3]~reg0
+A1L201Q = DFFEAS(A1L199, clk,  ,  , A1L180, A1L219,  ,  , !flag.00);
+
+
+--A1L205Q is light[4]~reg0
+A1L205Q = DFFEAS(A1L203, clk,  ,  , A1L180, A1L219,  ,  , !flag.00);
+
+
+--A1L209Q is light[5]~reg0
+A1L209Q = DFFEAS(A1L207, clk,  ,  , A1L180, A1L219,  ,  , !flag.00);
+
+
+--A1L213Q is light[6]~reg0
+A1L213Q = DFFEAS(A1L211, clk,  ,  , A1L180, A1L219,  ,  , !flag.00);
+
+
+--A1L217Q is light[7]~reg0
+A1L217Q = DFFEAS(A1L215, clk,  ,  ,  , A1L219,  ,  , !flag.00);
+
+
+--clk is clk
+clk = DFFEAS(A1L111, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--flag.10 is flag.10
+flag.10 = DFFEAS(flag.01, clk,  ,  , A1L182,  ,  ,  ,  );
+
+
+--flag.01 is flag.01
+flag.01 = DFFEAS(A1L176, clk,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L179 is flag~485
+A1L179 = flag.10 # flag.01;
+
+
+--A1L187 is light[0]~508
+A1L187 = A1L179 & (A1L193Q) # !A1L179 & A1L189Q;
+
+
+--A1L221 is rtl~511
+A1L221 = !A1L193Q # !A1L189Q;
+
+
+--A1L222 is rtl~512
+A1L222 = !A1L217Q # !A1L213Q # !A1L209Q # !A1L205Q;
+
+
+--A1L219 is rtl~0
+A1L219 = A1L221 # A1L222 # !A1L201Q # !A1L197Q;
+
+
+--flag.00 is flag.00
+flag.00 = DFFEAS(A1L183, clk,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L191 is light[1]~509
+A1L191 = flag.01 & (A1L197Q) # !flag.01 & !A1L193Q;
+
+
+--A1L180 is flag~486
+A1L180 = flag.10 # flag.01 # !flag.00;
+
+
+--A1L195 is light[2]~510
+A1L195 = flag.01 & (A1L201Q) # !flag.01 & A1L193Q;
+
+
+--A1L199 is light[3]~511
+A1L199 = flag.01 & (A1L205Q) # !flag.01 & !A1L193Q;
+
+
+--A1L203 is light[4]~512
+A1L203 = flag.01 & (A1L209Q) # !flag.01 & A1L193Q;
+
+
+--A1L207 is light[5]~513
+A1L207 = flag.01 & (A1L213Q) # !flag.01 & !A1L193Q;
+
+
+--A1L211 is light[6]~514
+A1L211 = flag.01 & (A1L217Q) # !flag.01 & A1L193Q;
+
+
+--A1L223 is rtl~513
+A1L223 = !A1L189Q & !A1L193Q;
+
+
+--A1L224 is rtl~514
+A1L224 = !A1L205Q & !A1L209Q & !A1L213Q & !A1L217Q;
+
+
+--A1L220 is rtl~1
+A1L220 = A1L223 & A1L224 & !A1L197Q & !A1L201Q;
+
+
+--A1L218 is light~585
+A1L218 = flag.10 & (!A1L193Q) # !flag.10 & A1L217Q;
+
+
+--A1L215 is light[7]~515
+A1L215 = flag.01 & A1L220 # !flag.01 & (A1L218);
+
+
+--clk1 is clk1
+clk1 = DFFEAS(A1L107, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--clk2 is clk2
+clk2 = DFFEAS(A1L109, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--b is b
+b = DFFEAS(A1L104, clk,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L111 is clk~10
+A1L111 = b & clk1 # !b & (clk2);
+
+
+--flag.11 is flag.11
+flag.11 = DFFEAS(A1L184, clk,  ,  , A1L182,  ,  ,  ,  );
+
+
+--A1L181 is flag~487
+A1L181 = A1L179 & (!A1L193Q) # !A1L179 & flag.00 & !flag.11;
+
+
+--A1L182 is flag~488
+A1L182 = !A1L181 & (A1L179 # flag.00 # !A1L219);
+
+
+--A1L176 is flag.01~101
+A1L176 = flag.01 & (!flag.00 # !A1L193Q) # !flag.01 & !A1L219 & (!flag.00);
+
+
+--A1L183 is flag~489
+A1L183 = flag.00 & !flag.11 # !flag.00 & (!A1L219);
+
+
+--count1[2] is count1[2]
+count1[2] = DFFEAS(A1L5, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count1[1] is count1[1]
+count1[1] = DFFEAS(A1L3, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count1[0] is count1[0]
+count1[0] = DFFEAS(A1L1, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count[25] is count[25]
+count[25] = DFFEAS(A1L55, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L225 is rtl~515
+A1L225 = count1[2] & count1[1] & count1[0] & !count[25];
+
+
+--count[24] is count[24]
+count[24] = DFFEAS(A1L53, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count[23] is count[23]
+count[23] = DFFEAS(A1L51, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count[22] is count[22]
+count[22] = DFFEAS(A1L49, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count[21] is count[21]
+count[21] = DFFEAS(A1L47, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L226 is rtl~516
+A1L226 = !count[24] & !count[23] & !count[22] & !count[21];
+
+
+--count[20] is count[20]
+count[20] = DFFEAS(A1L45, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count[19] is count[19]
+count[19] = DFFEAS(A1L43, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count[18] is count[18]
+count[18] = DFFEAS(A1L41, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count[17] is count[17]
+count[17] = DFFEAS(A1L39, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L227 is rtl~517
+A1L227 = !count[20] & !count[19] & !count[18] & !count[17];
+
+
+--count[15] is count[15]
+count[15] = DFFEAS(A1L168, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count[14] is count[14]
+count[14] = DFFEAS(A1L169, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count[16] is count[16]
+count[16] = DFFEAS(A1L37, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count[13] is count[13]
+count[13] = DFFEAS(A1L31, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L228 is rtl~518
+A1L228 = count[15] & count[14] & !count[16] & !count[13];
+
+
+--A1L229 is rtl~519
+A1L229 = A1L225 & A1L226 & A1L227 & A1L228;
+
+
+--count[9] is count[9]
+count[9] = DFFEAS(A1L170, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count[12] is count[12]
+count[12] = DFFEAS(A1L29, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count[11] is count[11]
+count[11] = DFFEAS(A1L27, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count[10] is count[10]
+count[10] = DFFEAS(A1L25, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L230 is rtl~520
+A1L230 = count[9] & !count[12] & !count[11] & !count[10];
+
+
+--count[8] is count[8]
+count[8] = DFFEAS(A1L171, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count[6] is count[6]
+count[6] = DFFEAS(A1L172, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count[7] is count[7]
+count[7] = DFFEAS(A1L19, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count[5] is count[5]
+count[5] = DFFEAS(A1L15, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L231 is rtl~521
+A1L231 = count[8] & count[6] & !count[7] & !count[5];
+
+
+--count[3] is count[3]
+count[3] = DFFEAS(A1L11, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count[4] is count[4]
+count[4] = DFFEAS(A1L173, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L232 is rtl~522
+A1L232 = A1L230 & A1L231 & count[3] & !count[4];
+
+
+--A1L107 is clk1~5
+A1L107 = clk1 $ (A1L229 & A1L232);
+
+
+--count1[25] is count1[25]
+count1[25] = DFFEAS(A1L101, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L233 is rtl~523
+A1L233 = count1[2] & count1[1] & count1[0] & !count1[25];
+
+
+--count1[24] is count1[24]
+count1[24] = DFFEAS(A1L99, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count1[23] is count1[23]
+count1[23] = DFFEAS(A1L97, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count1[22] is count1[22]
+count1[22] = DFFEAS(A1L95, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count1[21] is count1[21]
+count1[21] = DFFEAS(A1L93, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L234 is rtl~524
+A1L234 = !count1[24] & !count1[23] & !count1[22] & !count1[21];
+
+
+--count1[20] is count1[20]
+count1[20] = DFFEAS(A1L91, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count1[19] is count1[19]
+count1[19] = DFFEAS(A1L89, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count1[18] is count1[18]
+count1[18] = DFFEAS(A1L87, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count1[17] is count1[17]
+count1[17] = DFFEAS(A1L85, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L235 is rtl~525
+A1L235 = !count1[20] & !count1[19] & !count1[18] & !count1[17];
+
+
+--count1[16] is count1[16]
+count1[16] = DFFEAS(A1L83, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count1[15] is count1[15]
+count1[15] = DFFEAS(A1L81, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count1[14] is count1[14]
+count1[14] = DFFEAS(A1L79, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count1[13] is count1[13]
+count1[13] = DFFEAS(A1L77, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L236 is rtl~526
+A1L236 = !count1[16] & !count1[15] & !count1[14] & !count1[13];
+
+
+--A1L237 is rtl~527
+A1L237 = A1L233 & A1L234 & A1L235 & A1L236;
+
+
+--count1[12] is count1[12]
+count1[12] = DFFEAS(A1L140, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count1[9] is count1[9]
+count1[9] = DFFEAS(A1L141, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count1[11] is count1[11]
+count1[11] = DFFEAS(A1L73, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count1[10] is count1[10]
+count1[10] = DFFEAS(A1L71, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L238 is rtl~528
+A1L238 = count1[12] & count1[9] & !count1[11] & !count1[10];
+
+
+--count1[8] is count1[8]
+count1[8] = DFFEAS(A1L142, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count1[7] is count1[7]
+count1[7] = DFFEAS(A1L143, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count1[6] is count1[6]
+count1[6] = DFFEAS(A1L63, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count1[5] is count1[5]
+count1[5] = DFFEAS(A1L61, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L239 is rtl~529
+A1L239 = count1[8] & count1[7] & !count1[6] & !count1[5];
+
+
+--count1[4] is count1[4]
+count1[4] = DFFEAS(A1L59, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--count1[3] is count1[3]
+count1[3] = DFFEAS(A1L144, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L240 is rtl~530
+A1L240 = A1L238 & A1L239 & !count1[4] & !count1[3];
+
+
+--A1L109 is clk2~5
+A1L109 = clk2 $ (A1L237 & A1L240);
+
+
+--A1L104 is b~7
+A1L104 = b $ flag.11;
+
+
+--A1L184 is flag~490
+A1L184 = flag.10 & !flag.01;
+
+
+--A1L1 is add~802
+A1L1 = count1[0] $ VCC;
+
+--A1L2 is add~803
+A1L2 = CARRY(count1[0]);
+
+
+--A1L3 is add~804
+A1L3 = count1[1] & !A1L2 # !count1[1] & (A1L2 # GND);
+
+--A1L4 is add~805
+A1L4 = CARRY(!A1L2 # !count1[1]);
+
+
+--A1L5 is add~806
+A1L5 = count1[2] & (A1L4 $ GND) # !count1[2] & !A1L4 & VCC;
+
+--A1L6 is add~807
+A1L6 = CARRY(count1[2] & !A1L4);
+
+
+--A1L8 is add~809
+A1L8 = CARRY(count1[0] & count1[1]);
+
+
+--A1L10 is add~811
+A1L10 = CARRY(!A1L8 # !count1[2]);
+
+
+--A1L11 is add~812
+A1L11 = count[3] & (A1L10 $ GND) # !count[3] & !A1L10 & VCC;
+
+--A1L12 is add~813
+A1L12 = CARRY(count[3] & !A1L10);
+
+
+--A1L13 is add~814
+A1L13 = count[4] & !A1L12 # !count[4] & (A1L12 # GND);
+
+--A1L14 is add~815
+A1L14 = CARRY(!A1L12 # !count[4]);
+
+
+--A1L15 is add~816
+A1L15 = count[5] & (A1L14 $ GND) # !count[5] & !A1L14 & VCC;
+
+--A1L16 is add~817
+A1L16 = CARRY(count[5] & !A1L14);
+
+
+--A1L17 is add~818
+A1L17 = count[6] & !A1L16 # !count[6] & (A1L16 # GND);
+
+--A1L18 is add~819
+A1L18 = CARRY(!A1L16 # !count[6]);
+
+
+--A1L19 is add~820
+A1L19 = count[7] & (A1L18 $ GND) # !count[7] & !A1L18 & VCC;
+
+--A1L20 is add~821
+A1L20 = CARRY(count[7] & !A1L18);
+
+
+--A1L21 is add~822
+A1L21 = count[8] & !A1L20 # !count[8] & (A1L20 # GND);
+
+--A1L22 is add~823
+A1L22 = CARRY(!A1L20 # !count[8]);
+
+
+--A1L23 is add~824
+A1L23 = count[9] & (A1L22 $ GND) # !count[9] & !A1L22 & VCC;
+
+--A1L24 is add~825
+A1L24 = CARRY(count[9] & !A1L22);
+
+
+--A1L25 is add~826
+A1L25 = count[10] & !A1L24 # !count[10] & (A1L24 # GND);
+
+--A1L26 is add~827
+A1L26 = CARRY(!A1L24 # !count[10]);
+
+
+--A1L27 is add~828
+A1L27 = count[11] & (A1L26 $ GND) # !count[11] & !A1L26 & VCC;
+
+--A1L28 is add~829
+A1L28 = CARRY(count[11] & !A1L26);
+
+
+--A1L29 is add~830
+A1L29 = count[12] & !A1L28 # !count[12] & (A1L28 # GND);
+
+--A1L30 is add~831
+A1L30 = CARRY(!A1L28 # !count[12]);
+
+
+--A1L31 is add~832
+A1L31 = count[13] & (A1L30 $ GND) # !count[13] & !A1L30 & VCC;
+
+--A1L32 is add~833
+A1L32 = CARRY(count[13] & !A1L30);
+
+
+--A1L33 is add~834
+A1L33 = count[14] & !A1L32 # !count[14] & (A1L32 # GND);
+
+--A1L34 is add~835
+A1L34 = CARRY(!A1L32 # !count[14]);
+
+
+--A1L35 is add~836
+A1L35 = count[15] & (A1L34 $ GND) # !count[15] & !A1L34 & VCC;
+
+--A1L36 is add~837
+A1L36 = CARRY(count[15] & !A1L34);
+
+
+--A1L37 is add~838
+A1L37 = count[16] & !A1L36 # !count[16] & (A1L36 # GND);
+
+--A1L38 is add~839
+A1L38 = CARRY(!A1L36 # !count[16]);
+
+
+--A1L39 is add~840
+A1L39 = count[17] & (A1L38 $ GND) # !count[17] & !A1L38 & VCC;
+
+--A1L40 is add~841
+A1L40 = CARRY(count[17] & !A1L38);
+
+
+--A1L41 is add~842
+A1L41 = count[18] & !A1L40 # !count[18] & (A1L40 # GND);
+
+--A1L42 is add~843
+A1L42 = CARRY(!A1L40 # !count[18]);
+
+
+--A1L43 is add~844
+A1L43 = count[19] & (A1L42 $ GND) # !count[19] & !A1L42 & VCC;
+
+--A1L44 is add~845
+A1L44 = CARRY(count[19] & !A1L42);
+
+
+--A1L45 is add~846
+A1L45 = count[20] & !A1L44 # !count[20] & (A1L44 # GND);
+
+--A1L46 is add~847
+A1L46 = CARRY(!A1L44 # !count[20]);
+
+
+--A1L47 is add~848
+A1L47 = count[21] & (A1L46 $ GND) # !count[21] & !A1L46 & VCC;
+
+--A1L48 is add~849
+A1L48 = CARRY(count[21] & !A1L46);
+
+
+--A1L49 is add~850
+A1L49 = count[22] & !A1L48 # !count[22] & (A1L48 # GND);
+
+--A1L50 is add~851
+A1L50 = CARRY(!A1L48 # !count[22]);
+
+
+--A1L51 is add~852
+A1L51 = count[23] & (A1L50 $ GND) # !count[23] & !A1L50 & VCC;
+
+--A1L52 is add~853
+A1L52 = CARRY(count[23] & !A1L50);
+
+
+--A1L53 is add~854
+A1L53 = count[24] & !A1L52 # !count[24] & (A1L52 # GND);
+
+--A1L54 is add~855
+A1L54 = CARRY(!A1L52 # !count[24]);
+
+
+--A1L55 is add~856
+A1L55 = count[25] $ !A1L54;
+
+
+--A1L168 is count~180
+A1L168 = A1L35 & (!A1L232 # !A1L229);
+
+
+--A1L169 is count~181
+A1L169 = A1L33 & (!A1L232 # !A1L229);
+
+
+--A1L170 is count~182
+A1L170 = A1L23 & (!A1L232 # !A1L229);
+
+
+--A1L171 is count~183
+A1L171 = A1L21 & (!A1L232 # !A1L229);
+
+
+--A1L172 is count~184
+A1L172 = A1L17 & (!A1L232 # !A1L229);
+
+
+--A1L173 is count~185
+A1L173 = A1L13 & (!A1L232 # !A1L229);
+
+
+--A1L57 is add~858
+A1L57 = count1[3] & !A1L6 # !count1[3] & (A1L6 # GND);
+
+--A1L58 is add~859
+A1L58 = CARRY(!A1L6 # !count1[3]);
+
+
+--A1L59 is add~860
+A1L59 = count1[4] & (A1L58 $ GND) # !count1[4] & !A1L58 & VCC;
+
+--A1L60 is add~861
+A1L60 = CARRY(count1[4] & !A1L58);
+
+
+--A1L61 is add~862
+A1L61 = count1[5] & !A1L60 # !count1[5] & (A1L60 # GND);
+
+--A1L62 is add~863
+A1L62 = CARRY(!A1L60 # !count1[5]);
+
+
+--A1L63 is add~864
+A1L63 = count1[6] & (A1L62 $ GND) # !count1[6] & !A1L62 & VCC;
+
+--A1L64 is add~865
+A1L64 = CARRY(count1[6] & !A1L62);
+
+
+--A1L65 is add~866
+A1L65 = count1[7] & !A1L64 # !count1[7] & (A1L64 # GND);
+
+--A1L66 is add~867
+A1L66 = CARRY(!A1L64 # !count1[7]);
+
+
+--A1L67 is add~868
+A1L67 = count1[8] & (A1L66 $ GND) # !count1[8] & !A1L66 & VCC;
+
+--A1L68 is add~869
+A1L68 = CARRY(count1[8] & !A1L66);
+
+
+--A1L69 is add~870
+A1L69 = count1[9] & !A1L68 # !count1[9] & (A1L68 # GND);
+
+--A1L70 is add~871
+A1L70 = CARRY(!A1L68 # !count1[9]);
+
+
+--A1L71 is add~872
+A1L71 = count1[10] & (A1L70 $ GND) # !count1[10] & !A1L70 & VCC;
+
+--A1L72 is add~873
+A1L72 = CARRY(count1[10] & !A1L70);
+
+
+--A1L73 is add~874
+A1L73 = count1[11] & !A1L72 # !count1[11] & (A1L72 # GND);
+
+--A1L74 is add~875
+A1L74 = CARRY(!A1L72 # !count1[11]);
+
+
+--A1L75 is add~876
+A1L75 = count1[12] & (A1L74 $ GND) # !count1[12] & !A1L74 & VCC;
+
+--A1L76 is add~877
+A1L76 = CARRY(count1[12] & !A1L74);
+
+
+--A1L77 is add~878
+A1L77 = count1[13] & !A1L76 # !count1[13] & (A1L76 # GND);
+
+--A1L78 is add~879
+A1L78 = CARRY(!A1L76 # !count1[13]);
+
+
+--A1L79 is add~880
+A1L79 = count1[14] & (A1L78 $ GND) # !count1[14] & !A1L78 & VCC;
+
+--A1L80 is add~881
+A1L80 = CARRY(count1[14] & !A1L78);
+
+
+--A1L81 is add~882
+A1L81 = count1[15] & !A1L80 # !count1[15] & (A1L80 # GND);
+
+--A1L82 is add~883
+A1L82 = CARRY(!A1L80 # !count1[15]);
+
+
+--A1L83 is add~884
+A1L83 = count1[16] & (A1L82 $ GND) # !count1[16] & !A1L82 & VCC;
+
+--A1L84 is add~885
+A1L84 = CARRY(count1[16] & !A1L82);
+
+
+--A1L85 is add~886
+A1L85 = count1[17] & !A1L84 # !count1[17] & (A1L84 # GND);
+
+--A1L86 is add~887
+A1L86 = CARRY(!A1L84 # !count1[17]);
+
+
+--A1L87 is add~888
+A1L87 = count1[18] & (A1L86 $ GND) # !count1[18] & !A1L86 & VCC;
+
+--A1L88 is add~889
+A1L88 = CARRY(count1[18] & !A1L86);
+
+
+--A1L89 is add~890
+A1L89 = count1[19] & !A1L88 # !count1[19] & (A1L88 # GND);
+
+--A1L90 is add~891
+A1L90 = CARRY(!A1L88 # !count1[19]);
+
+
+--A1L91 is add~892
+A1L91 = count1[20] & (A1L90 $ GND) # !count1[20] & !A1L90 & VCC;
+
+--A1L92 is add~893
+A1L92 = CARRY(count1[20] & !A1L90);
+
+
+--A1L93 is add~894
+A1L93 = count1[21] & !A1L92 # !count1[21] & (A1L92 # GND);
+
+--A1L94 is add~895
+A1L94 = CARRY(!A1L92 # !count1[21]);
+
+
+--A1L95 is add~896
+A1L95 = count1[22] & (A1L94 $ GND) # !count1[22] & !A1L94 & VCC;
+
+--A1L96 is add~897
+A1L96 = CARRY(count1[22] & !A1L94);
+
+
+--A1L97 is add~898
+A1L97 = count1[23] & !A1L96 # !count1[23] & (A1L96 # GND);
+
+--A1L98 is add~899
+A1L98 = CARRY(!A1L96 # !count1[23]);
+
+
+--A1L99 is add~900
+A1L99 = count1[24] & (A1L98 $ GND) # !count1[24] & !A1L98 & VCC;
+
+--A1L100 is add~901
+A1L100 = CARRY(count1[24] & !A1L98);
+
+
+--A1L101 is add~902
+A1L101 = count1[25] $ A1L100;
+
+
+--A1L140 is count1~172
+A1L140 = A1L75 & (!A1L240 # !A1L237);
+
+
+--A1L141 is count1~173
+A1L141 = A1L69 & (!A1L240 # !A1L237);
+
+
+--A1L142 is count1~174
+A1L142 = A1L67 & (!A1L240 # !A1L237);
+
+
+--A1L143 is count1~175
+A1L143 = A1L65 & (!A1L240 # !A1L237);
+
+
+--A1L144 is count1~176
+A1L144 = A1L57 & (!A1L240 # !A1L237);
+
+
+--clk100khz is clk100khz
+--operation mode is input
+
+clk100khz = INPUT();
+
+
+--light[0] is light[0]
+--operation mode is output
+
+light[0] = OUTPUT(A1L189Q);
+
+
+--light[1] is light[1]
+--operation mode is output
+
+light[1] = OUTPUT(A1L193Q);
+
+
+--light[2] is light[2]
+--operation mode is output
+
+light[2] = OUTPUT(A1L197Q);
+
+
+--light[3] is light[3]
+--operation mode is output
+
+light[3] = OUTPUT(A1L201Q);
+
+
+--light[4] is light[4]
+--operation mode is output
+
+light[4] = OUTPUT(A1L205Q);
+
+
+--light[5] is light[5]
+--operation mode is output
+
+light[5] = OUTPUT(A1L209Q);
+
+
+--light[6] is light[6]
+--operation mode is output
+
+light[6] = OUTPUT(A1L213Q);
+
+
+--light[7] is light[7]
+--operation mode is output
+
+light[7] = OUTPUT(A1L217Q);
+
+

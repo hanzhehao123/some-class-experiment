@@ -1,0 +1,14 @@
+Fitter Status : Successful - Thu Jun 14 14:28:12 2018
+Quartus II Version : 5.1 Build 176 10/26/2005 SJ Full Version
+Revision Name : qiangda
+Top-level Entity Name : qiangda
+Family : Cyclone II
+Device : EP2C5T144C8
+Timing Models : Preliminary
+Total logic elements : 81 / 4,608 ( 2 % )
+Total registers : 32
+Total pins : 26 / 89 ( 29 % )
+Total virtual pins : 0
+Total memory bits : 0 / 119,808 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 26 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

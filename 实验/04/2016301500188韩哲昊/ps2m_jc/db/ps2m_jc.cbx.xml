@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="ps2m_jc">
+		<CBX_INST_ENTRY INSTANCE_NAME="|ps2m_jc|altsyncram:reduce_or_rtl_0" CBX_FILE_NAME="altsyncram_u9m.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

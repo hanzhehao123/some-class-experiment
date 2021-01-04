@@ -1,0 +1,386 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--C1_q_a[0] is altsyncram:reduce_or_rtl_0|altsyncram_u9m:auto_generated|q_a[0]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 7
+--Port A Input: Registered, Port A Output: Un-registered
+C1_q_a[0]_PORT_A_address = BUS(m[0], m[1], m[2], m[3], m[4], m[5], m[6], m[7]);
+C1_q_a[0]_PORT_A_address_reg = DFFE(C1_q_a[0]_PORT_A_address, C1_q_a[0]_clock_0, , , C1_q_a[0]_clock_enable_0);
+C1_q_a[0]_clock_0 = clk1;
+C1_q_a[0]_clock_enable_0 = !check;
+C1_q_a[0]_PORT_A_data_out = MEMORY(, , C1_q_a[0]_PORT_A_address_reg, , , , , , C1_q_a[0]_clock_0, , C1_q_a[0]_clock_enable_0, , , );
+C1_q_a[0] = C1_q_a[0]_PORT_A_data_out[0];
+
+
+--C1_q_a[1] is altsyncram:reduce_or_rtl_0|altsyncram_u9m:auto_generated|q_a[1]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 7
+--Port A Input: Registered, Port A Output: Un-registered
+C1_q_a[1]_PORT_A_address = BUS(m[0], m[1], m[2], m[3], m[4], m[5], m[6], m[7]);
+C1_q_a[1]_PORT_A_address_reg = DFFE(C1_q_a[1]_PORT_A_address, C1_q_a[1]_clock_0, , , C1_q_a[1]_clock_enable_0);
+C1_q_a[1]_clock_0 = clk1;
+C1_q_a[1]_clock_enable_0 = !check;
+C1_q_a[1]_PORT_A_data_out = MEMORY(, , C1_q_a[1]_PORT_A_address_reg, , , , , , C1_q_a[1]_clock_0, , C1_q_a[1]_clock_enable_0, , , );
+C1_q_a[1] = C1_q_a[1]_PORT_A_data_out[0];
+
+
+--C1_q_a[2] is altsyncram:reduce_or_rtl_0|altsyncram_u9m:auto_generated|q_a[2]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 7
+--Port A Input: Registered, Port A Output: Un-registered
+C1_q_a[2]_PORT_A_address = BUS(m[0], m[1], m[2], m[3], m[4], m[5], m[6], m[7]);
+C1_q_a[2]_PORT_A_address_reg = DFFE(C1_q_a[2]_PORT_A_address, C1_q_a[2]_clock_0, , , C1_q_a[2]_clock_enable_0);
+C1_q_a[2]_clock_0 = clk1;
+C1_q_a[2]_clock_enable_0 = !check;
+C1_q_a[2]_PORT_A_data_out = MEMORY(, , C1_q_a[2]_PORT_A_address_reg, , , , , , C1_q_a[2]_clock_0, , C1_q_a[2]_clock_enable_0, , , );
+C1_q_a[2] = C1_q_a[2]_PORT_A_data_out[0];
+
+
+--C1_q_a[3] is altsyncram:reduce_or_rtl_0|altsyncram_u9m:auto_generated|q_a[3]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 7
+--Port A Input: Registered, Port A Output: Un-registered
+C1_q_a[3]_PORT_A_address = BUS(m[0], m[1], m[2], m[3], m[4], m[5], m[6], m[7]);
+C1_q_a[3]_PORT_A_address_reg = DFFE(C1_q_a[3]_PORT_A_address, C1_q_a[3]_clock_0, , , C1_q_a[3]_clock_enable_0);
+C1_q_a[3]_clock_0 = clk1;
+C1_q_a[3]_clock_enable_0 = !check;
+C1_q_a[3]_PORT_A_data_out = MEMORY(, , C1_q_a[3]_PORT_A_address_reg, , , , , , C1_q_a[3]_clock_0, , C1_q_a[3]_clock_enable_0, , , );
+C1_q_a[3] = C1_q_a[3]_PORT_A_data_out[0];
+
+
+--C1_q_a[4] is altsyncram:reduce_or_rtl_0|altsyncram_u9m:auto_generated|q_a[4]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 7
+--Port A Input: Registered, Port A Output: Un-registered
+C1_q_a[4]_PORT_A_address = BUS(m[0], m[1], m[2], m[3], m[4], m[5], m[6], m[7]);
+C1_q_a[4]_PORT_A_address_reg = DFFE(C1_q_a[4]_PORT_A_address, C1_q_a[4]_clock_0, , , C1_q_a[4]_clock_enable_0);
+C1_q_a[4]_clock_0 = clk1;
+C1_q_a[4]_clock_enable_0 = !check;
+C1_q_a[4]_PORT_A_data_out = MEMORY(, , C1_q_a[4]_PORT_A_address_reg, , , , , , C1_q_a[4]_clock_0, , C1_q_a[4]_clock_enable_0, , , );
+C1_q_a[4] = C1_q_a[4]_PORT_A_data_out[0];
+
+
+--C1_q_a[5] is altsyncram:reduce_or_rtl_0|altsyncram_u9m:auto_generated|q_a[5]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 7
+--Port A Input: Registered, Port A Output: Un-registered
+C1_q_a[5]_PORT_A_address = BUS(m[0], m[1], m[2], m[3], m[4], m[5], m[6], m[7]);
+C1_q_a[5]_PORT_A_address_reg = DFFE(C1_q_a[5]_PORT_A_address, C1_q_a[5]_clock_0, , , C1_q_a[5]_clock_enable_0);
+C1_q_a[5]_clock_0 = clk1;
+C1_q_a[5]_clock_enable_0 = !check;
+C1_q_a[5]_PORT_A_data_out = MEMORY(, , C1_q_a[5]_PORT_A_address_reg, , , , , , C1_q_a[5]_clock_0, , C1_q_a[5]_clock_enable_0, , , );
+C1_q_a[5] = C1_q_a[5]_PORT_A_data_out[0];
+
+
+--C1_q_a[6] is altsyncram:reduce_or_rtl_0|altsyncram_u9m:auto_generated|q_a[6]
+--RAM Block Operation Mode: ROM
+--Port A Depth: 256, Port A Width: 1
+--Port A Logical Depth: 256, Port A Logical Width: 7
+--Port A Input: Registered, Port A Output: Un-registered
+C1_q_a[6]_PORT_A_address = BUS(m[0], m[1], m[2], m[3], m[4], m[5], m[6], m[7]);
+C1_q_a[6]_PORT_A_address_reg = DFFE(C1_q_a[6]_PORT_A_address, C1_q_a[6]_clock_0, , , C1_q_a[6]_clock_enable_0);
+C1_q_a[6]_clock_0 = clk1;
+C1_q_a[6]_clock_enable_0 = !check;
+C1_q_a[6]_PORT_A_data_out = MEMORY(, , C1_q_a[6]_PORT_A_address_reg, , , , , , C1_q_a[6]_clock_0, , C1_q_a[6]_clock_enable_0, , , );
+C1_q_a[6] = C1_q_a[6]_PORT_A_data_out[0];
+
+
+--s[1] is s[1]
+s[1] = DFFEAS(m[1], clk1,  ,  , !check,  ,  ,  ,  );
+
+
+--s[7] is s[7]
+s[7] = DFFEAS(m[7], clk1,  ,  , !check,  ,  ,  ,  );
+
+
+--c[7] is c[7]
+c[7] = DFFEAS(m[7], clk1,  ,  , check,  ,  ,  ,  );
+
+
+--c[1] is c[1]
+c[1] = DFFEAS(m[1], clk1,  ,  , check,  ,  ,  ,  );
+
+
+--A1L52 is rtl~45
+A1L52 = s[1] & c[1] & (s[7] $ !c[7]) # !s[1] & !c[1] & (s[7] $ !c[7]);
+
+
+--s[0] is s[0]
+s[0] = DFFEAS(m[0], clk1,  ,  , !check,  ,  ,  ,  );
+
+
+--s[5] is s[5]
+s[5] = DFFEAS(m[5], clk1,  ,  , !check,  ,  ,  ,  );
+
+
+--c[5] is c[5]
+c[5] = DFFEAS(m[5], clk1,  ,  , check,  ,  ,  ,  );
+
+
+--c[0] is c[0]
+c[0] = DFFEAS(m[0], clk1,  ,  , check,  ,  ,  ,  );
+
+
+--A1L53 is rtl~46
+A1L53 = s[0] & c[0] & (s[5] $ !c[5]) # !s[0] & !c[0] & (s[5] $ !c[5]);
+
+
+--s[3] is s[3]
+s[3] = DFFEAS(m[3], clk1,  ,  , !check,  ,  ,  ,  );
+
+
+--s[4] is s[4]
+s[4] = DFFEAS(m[4], clk1,  ,  , !check,  ,  ,  ,  );
+
+
+--c[4] is c[4]
+c[4] = DFFEAS(m[4], clk1,  ,  , check,  ,  ,  ,  );
+
+
+--c[3] is c[3]
+c[3] = DFFEAS(m[3], clk1,  ,  , check,  ,  ,  ,  );
+
+
+--A1L54 is rtl~47
+A1L54 = s[3] & c[3] & (s[4] $ !c[4]) # !s[3] & !c[3] & (s[4] $ !c[4]);
+
+
+--s[6] is s[6]
+s[6] = DFFEAS(m[6], clk1,  ,  , !check,  ,  ,  ,  );
+
+
+--s[2] is s[2]
+s[2] = DFFEAS(m[2], clk1,  ,  , !check,  ,  ,  ,  );
+
+
+--c[2] is c[2]
+c[2] = DFFEAS(m[2], clk1,  ,  , check,  ,  ,  ,  );
+
+
+--c[6] is c[6]
+c[6] = DFFEAS(m[6], clk1,  ,  , check,  ,  ,  ,  );
+
+
+--A1L55 is rtl~48
+A1L55 = s[6] & c[6] & (s[2] $ !c[2]) # !s[6] & !c[6] & (s[2] $ !c[2]);
+
+
+--A1L56 is rtl~49
+A1L56 = A1L52 & A1L53 & A1L54 & A1L55;
+
+
+--clk1 is clk1
+clk1 = DFFEAS(kbclk, clkin,  ,  ,  ,  ,  ,  ,  );
+
+
+--m[0] is m[0]
+m[0] = DFFEAS(A1L42, !clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--m[1] is m[1]
+m[1] = DFFEAS(A1L43, !clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--m[2] is m[2]
+m[2] = DFFEAS(A1L44, !clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--m[3] is m[3]
+m[3] = DFFEAS(A1L45, !clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--m[4] is m[4]
+m[4] = DFFEAS(A1L46, !clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--m[5] is m[5]
+m[5] = DFFEAS(A1L47, !clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--m[6] is m[6]
+m[6] = DFFEAS(A1L48, !clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--m[7] is m[7]
+m[7] = DFFEAS(A1L49, !clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L42 is m~110
+A1L42 = check & c[1] # !check & (s[1]);
+
+
+--A1L43 is m~111
+A1L43 = check & c[2] # !check & (s[2]);
+
+
+--A1L44 is m~112
+A1L44 = check & c[3] # !check & (s[3]);
+
+
+--A1L45 is m~113
+A1L45 = check & c[4] # !check & (s[4]);
+
+
+--A1L46 is m~114
+A1L46 = check & c[5] # !check & (s[5]);
+
+
+--A1L47 is m~115
+A1L47 = check & c[6] # !check & (s[6]);
+
+
+--A1L48 is m~116
+A1L48 = check & c[7] # !check & (s[7]);
+
+
+--c[8] is c[8]
+c[8] = DFFEAS(m[8], clk1,  ,  , check,  ,  ,  ,  );
+
+
+--s[8] is s[8]
+s[8] = DFFEAS(m[8], clk1,  ,  , !check,  ,  ,  ,  );
+
+
+--A1L49 is m~117
+A1L49 = check & c[8] # !check & (s[8]);
+
+
+--m[8] is m[8]
+m[8] = DFFEAS(A1L50, !clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--c[9] is c[9]
+c[9] = DFFEAS(m[9], clk1,  ,  , check,  ,  ,  ,  );
+
+
+--s[9] is s[9]
+s[9] = DFFEAS(m[9], clk1,  ,  , !check,  ,  ,  ,  );
+
+
+--A1L50 is m~118
+A1L50 = check & c[9] # !check & (s[9]);
+
+
+--m[9] is m[9]
+m[9] = DFFEAS(kbdata, !clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--rst is rst
+--operation mode is input
+
+rst = INPUT();
+
+
+--check is check
+--operation mode is input
+
+check = INPUT();
+
+
+--kbclk is kbclk
+--operation mode is input
+
+kbclk = INPUT();
+
+
+--clkin is clkin
+--operation mode is input
+
+clkin = INPUT();
+
+
+--kbdata is kbdata
+--operation mode is input
+
+kbdata = INPUT();
+
+
+--dout[0] is dout[0]
+--operation mode is output
+
+dout[0] = OUTPUT(C1_q_a[0]);
+
+
+--dout[1] is dout[1]
+--operation mode is output
+
+dout[1] = OUTPUT(C1_q_a[1]);
+
+
+--dout[2] is dout[2]
+--operation mode is output
+
+dout[2] = OUTPUT(C1_q_a[2]);
+
+
+--dout[3] is dout[3]
+--operation mode is output
+
+dout[3] = OUTPUT(C1_q_a[3]);
+
+
+--dout[4] is dout[4]
+--operation mode is output
+
+dout[4] = OUTPUT(C1_q_a[4]);
+
+
+--dout[5] is dout[5]
+--operation mode is output
+
+dout[5] = OUTPUT(C1_q_a[5]);
+
+
+--dout[6] is dout[6]
+--operation mode is output
+
+dout[6] = OUTPUT(C1_q_a[6]);
+
+
+--dout[7] is dout[7]
+--operation mode is output
+
+dout[7] = OUTPUT(GND);
+
+
+--jgout[0] is jgout[0]
+--operation mode is output
+
+jgout[0] = OUTPUT(!A1L56);
+
+
+--jgout[1] is jgout[1]
+--operation mode is output
+
+jgout[1] = OUTPUT(VCC);
+
+
+--jgout[2] is jgout[2]
+--operation mode is output
+
+jgout[2] = OUTPUT(GND);
+
+
+--jgout[3] is jgout[3]
+--operation mode is output
+
+jgout[3] = OUTPUT(VCC);
+
+

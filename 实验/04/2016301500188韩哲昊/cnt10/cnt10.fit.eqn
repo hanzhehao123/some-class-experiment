@@ -1,0 +1,392 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--cnt[0] is cnt[0] at LCFF_X2_Y5_N27
+cnt[0] = DFFEAS(A1L15, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--cnt[2] is cnt[2] at LCFF_X2_Y5_N11
+cnt[2] = DFFEAS(A1L18, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--cnt[1] is cnt[1] at LCFF_X2_Y5_N25
+cnt[1] = DFFEAS(A1L19, clk100khz,  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L1 is Decoder~123 at LCCOMB_X2_Y5_N16
+A1L1 = !cnt[2] & !cnt[1] & !cnt[0];
+
+
+--A1L2 is Decoder~124 at LCCOMB_X2_Y5_N14
+A1L2 = !cnt[2] & !cnt[1] & cnt[0];
+
+
+--A1L78 is reduce_or~127 at LCCOMB_X2_Y1_N12
+A1L78 = dat[2] & !dat[1] & (dat[3] $ !dat[0]) # !dat[2] & dat[0] & (dat[1] $ !dat[3]);
+
+
+--A1L79 is reduce_or~128 at LCCOMB_X2_Y1_N20
+A1L79 = dat[1] & (dat[0] & (dat[3]) # !dat[0] & dat[2]) # !dat[1] & dat[2] & (dat[3] $ dat[0]);
+
+
+--A1L80 is reduce_or~129 at LCCOMB_X2_Y1_N16
+A1L80 = dat[2] & dat[3] & (dat[1] # !dat[0]) # !dat[2] & dat[1] & !dat[3] & !dat[0];
+
+
+--A1L81 is reduce_or~130 at LCCOMB_X2_Y1_N10
+A1L81 = dat[1] & (dat[2] & (dat[0]) # !dat[2] & dat[3] & !dat[0]) # !dat[1] & !dat[3] & (dat[2] $ dat[0]);
+
+
+--A1L82 is reduce_or~131 at LCCOMB_X2_Y1_N22
+A1L82 = dat[1] & (!dat[3] & dat[0]) # !dat[1] & (dat[2] & !dat[3] # !dat[2] & (dat[0]));
+
+
+--A1L83 is reduce_or~132 at LCCOMB_X2_Y1_N4
+A1L83 = dat[1] & !dat[3] & (dat[0] # !dat[2]) # !dat[1] & dat[0] & (dat[2] $ !dat[3]);
+
+
+--A1L84 is reduce_or~133 at LCCOMB_X2_Y1_N18
+A1L84 = dat[0] & (dat[3] # dat[1] $ dat[2]) # !dat[0] & (dat[1] # dat[2] $ dat[3]);
+
+
+--A1L18 is cnt[2]~58 at LCCOMB_X2_Y5_N10
+A1L18 = cnt[2] $ (cnt[1] & cnt[0]);
+
+
+--A1L19 is cnt~59 at LCCOMB_X2_Y5_N24
+A1L19 = cnt[1] & (!cnt[0]) # !cnt[1] & cnt[2] & cnt[0];
+
+
+--data2[0] is data2[0] at LCFF_X2_Y4_N21
+data2[0] = DFFEAS(A1L46, GLOBAL(A1L76),  ,  ,  ,  ,  , A1L56,  );
+
+
+--data1[0] is data1[0] at LCFF_X3_Y5_N25
+data1[0] = DFFEAS(A1L28, GLOBAL(A1L71),  ,  ,  , A1L86,  , A1L39, A1L41);
+
+
+--A1L5 is Select~200 at LCCOMB_X2_Y5_N2
+A1L5 = cnt[0] & (data2[0]) # !cnt[0] & data1[0];
+
+
+--A1L3 is Decoder~125 at LCCOMB_X2_Y5_N0
+A1L3 = !cnt[1] & !cnt[2];
+
+
+--data2[1] is data2[1] at LCFF_X2_Y4_N23
+data2[1] = DFFEAS(A1L49, GLOBAL(A1L76),  ,  ,  ,  ,  , A1L56,  );
+
+
+--data1[1] is data1[1] at LCFF_X3_Y5_N27
+data1[1] = DFFEAS(A1L31, GLOBAL(A1L71),  ,  ,  , A1L86,  , A1L39, A1L41);
+
+
+--A1L6 is Select~201 at LCCOMB_X2_Y5_N28
+A1L6 = cnt[0] & data2[1] # !cnt[0] & (data1[1]);
+
+
+--data2[2] is data2[2] at LCFF_X2_Y4_N25
+data2[2] = DFFEAS(A1L52, GLOBAL(A1L76),  ,  ,  ,  ,  , A1L56,  );
+
+
+--data1[2] is data1[2] at LCFF_X3_Y5_N29
+data1[2] = DFFEAS(A1L34, GLOBAL(A1L71),  ,  ,  , A1L86,  , A1L39, A1L41);
+
+
+--A1L7 is Select~202 at LCCOMB_X2_Y5_N12
+A1L7 = cnt[0] & (data2[2]) # !cnt[0] & data1[2];
+
+
+--data2[3] is data2[3] at LCFF_X2_Y4_N27
+data2[3] = DFFEAS(A1L57, GLOBAL(A1L76),  ,  ,  ,  ,  , A1L56,  );
+
+
+--data1[3] is data1[3] at LCFF_X3_Y5_N31
+data1[3] = DFFEAS(A1L42, GLOBAL(A1L71),  ,  ,  , A1L86,  , A1L39, A1L41);
+
+
+--A1L8 is Select~203 at LCCOMB_X2_Y5_N18
+A1L8 = cnt[0] & data2[3] # !cnt[0] & (data1[3]);
+
+
+--f2 is f2 at LCFF_X3_Y5_N1
+f2 = DFFEAS(A1L75, GLOBAL(A1L71),  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L46 is data2[0]~342 at LCCOMB_X2_Y4_N20
+A1L46 = data2[0] $ VCC;
+
+--A1L47 is data2[0]~343 at LCCOMB_X2_Y4_N20
+A1L47 = CARRY(data2[0]);
+
+
+--A1L86 is rtl~39 at LCCOMB_X2_Y5_N30
+A1L86 = data2[2] # data2[1] # data2[0] # data2[3];
+
+
+--A1L55 is data2[3]~344 at LCCOMB_X2_Y4_N0
+A1L55 = !data2[1] # !data2[0] # !data2[3] # !data2[2];
+
+
+--A1L56 is data2[3]~345 at LCCOMB_X2_Y5_N6
+A1L56 = minus & (!A1L86) # !minus & !A1L55 # !rst;
+
+
+--c is c at LCFF_X1_Y5_N1
+c = DFFEAS(UNCONNECTED_DATAIN, clk10hz,  ,  ,  , A1L20,  ,  , VCC);
+
+
+--A1L70 is f1~10 at LCCOMB_X1_Y5_N0
+A1L70 = en & c # !en & (clk1hz);
+
+
+--A1L28 is data1[0]~349 at LCCOMB_X3_Y5_N24
+A1L28 = data1[0] $ VCC;
+
+--A1L29 is data1[0]~350 at LCCOMB_X3_Y5_N24
+A1L29 = CARRY(data1[0]);
+
+
+--A1L37 is data1[3]~351 at LCCOMB_X3_Y5_N2
+A1L37 = data1[1] & data1[2];
+
+
+--A1L38 is data1[3]~352 at LCCOMB_X3_Y5_N10
+A1L38 = !minus & A1L37 & data1[0] & data1[3];
+
+
+--A1L39 is data1[3]~353 at LCCOMB_X3_Y5_N16
+A1L39 = A1L38 # !rst;
+
+
+--A1L40 is data1[3]~354 at LCCOMB_X3_Y5_N12
+A1L40 = data1[3] & !minus & (!data1[1] # !data1[2]) # !data1[3] & (data1[2] # data1[1] # !minus);
+
+
+--A1L41 is data1[3]~355 at LCCOMB_X3_Y5_N8
+A1L41 = !A1L40 & (data1[0] & !minus # !data1[0] & (!data1[3]));
+
+
+--A1L49 is data2[1]~346 at LCCOMB_X2_Y4_N22
+A1L49 = data2[1] & (minus & A1L47 & VCC # !minus & !A1L47) # !data2[1] & (minus & !A1L47 # !minus & (A1L47 # GND));
+
+--A1L50 is data2[1]~347 at LCCOMB_X2_Y4_N22
+A1L50 = CARRY(data2[1] & !minus & !A1L47 # !data2[1] & (!A1L47 # !minus));
+
+
+--A1L31 is data1[1]~356 at LCCOMB_X3_Y5_N26
+A1L31 = minus & (data1[1] & A1L29 & VCC # !data1[1] & !A1L29) # !minus & (data1[1] & !A1L29 # !data1[1] & (A1L29 # GND));
+
+--A1L32 is data1[1]~357 at LCCOMB_X3_Y5_N26
+A1L32 = CARRY(minus & !data1[1] & !A1L29 # !minus & (!A1L29 # !data1[1]));
+
+
+--A1L52 is data2[2]~348 at LCCOMB_X2_Y4_N24
+A1L52 = (data2[2] $ minus $ !A1L50) # GND;
+
+--A1L53 is data2[2]~349 at LCCOMB_X2_Y4_N24
+A1L53 = CARRY(data2[2] & (minus # !A1L50) # !data2[2] & minus & !A1L50);
+
+
+--A1L34 is data1[2]~358 at LCCOMB_X3_Y5_N28
+A1L34 = (minus $ data1[2] $ !A1L32) # GND;
+
+--A1L35 is data1[2]~359 at LCCOMB_X3_Y5_N28
+A1L35 = CARRY(minus & (data1[2] # !A1L32) # !minus & data1[2] & !A1L32);
+
+
+--A1L57 is data2[3]~350 at LCCOMB_X2_Y4_N26
+A1L57 = minus $ A1L53 $ data2[3];
+
+
+--A1L42 is data1[3]~360 at LCCOMB_X3_Y5_N30
+A1L42 = minus $ A1L35 $ data1[3];
+
+
+--A1L73 is f2~97 at LCCOMB_X3_Y5_N18
+A1L73 = !data1[3] & !data1[2] & !data1[0] & !data1[1];
+
+
+--A1L74 is f2~98 at LCCOMB_X3_Y5_N22
+A1L74 = A1L86 & rst & minus & A1L73;
+
+
+--A1L75 is f2~99 at LCCOMB_X3_Y5_N0
+A1L75 = A1L74 # rst & A1L38 # !rst & (f2);
+
+
+--A1L15 is cnt[0]~60 at LCCOMB_X2_Y5_N26
+A1L15 = !cnt[0];
+
+
+--A1L20 is c~2 at LCCOMB_X1_Y5_N14
+A1L20 = !din;
+
+
+--dat[0] is dat[0] at LCCOMB_X2_Y5_N22
+dat[0] = GLOBAL(A1L4) & A1L5 # !GLOBAL(A1L4) & (dat[0]);
+
+
+--dat[1] is dat[1] at LCCOMB_X2_Y5_N8
+dat[1] = GLOBAL(A1L4) & A1L6 # !GLOBAL(A1L4) & (dat[1]);
+
+
+--dat[2] is dat[2] at LCCOMB_X2_Y5_N4
+dat[2] = GLOBAL(A1L4) & A1L7 # !GLOBAL(A1L4) & (dat[2]);
+
+
+--dat[3] is dat[3] at LCCOMB_X2_Y5_N20
+dat[3] = GLOBAL(A1L4) & A1L8 # !GLOBAL(A1L4) & (dat[3]);
+
+
+--clk100khz is clk100khz at PIN_25
+--operation mode is input
+
+clk100khz = INPUT();
+
+
+--rst is rst at PIN_27
+--operation mode is input
+
+rst = INPUT();
+
+
+--minus is minus at PIN_30
+--operation mode is input
+
+minus = INPUT();
+
+
+--clk1hz is clk1hz at PIN_24
+--operation mode is input
+
+clk1hz = INPUT();
+
+
+--en is en at PIN_26
+--operation mode is input
+
+en = INPUT();
+
+
+--din is din at PIN_28
+--operation mode is input
+
+din = INPUT();
+
+
+--clk10hz is clk10hz at PIN_32
+--operation mode is input
+
+clk10hz = INPUT();
+
+
+--scan[0] is scan[0] at PIN_51
+--operation mode is output
+
+scan[0] = OUTPUT(GND);
+
+
+--scan[1] is scan[1] at PIN_52
+--operation mode is output
+
+scan[1] = OUTPUT(GND);
+
+
+--scan[2] is scan[2] at PIN_53
+--operation mode is output
+
+scan[2] = OUTPUT(GND);
+
+
+--scan[3] is scan[3] at PIN_55
+--operation mode is output
+
+scan[3] = OUTPUT(A1L1);
+
+
+--scan[4] is scan[4] at PIN_57
+--operation mode is output
+
+scan[4] = OUTPUT(A1L2);
+
+
+--scan[5] is scan[5] at PIN_58
+--operation mode is output
+
+scan[5] = OUTPUT(GND);
+
+
+--dout[0] is dout[0] at PIN_40
+--operation mode is output
+
+dout[0] = OUTPUT(!A1L78);
+
+
+--dout[1] is dout[1] at PIN_41
+--operation mode is output
+
+dout[1] = OUTPUT(!A1L79);
+
+
+--dout[2] is dout[2] at PIN_42
+--operation mode is output
+
+dout[2] = OUTPUT(!A1L80);
+
+
+--dout[3] is dout[3] at PIN_43
+--operation mode is output
+
+dout[3] = OUTPUT(!A1L81);
+
+
+--dout[4] is dout[4] at PIN_44
+--operation mode is output
+
+dout[4] = OUTPUT(!A1L82);
+
+
+--dout[5] is dout[5] at PIN_45
+--operation mode is output
+
+dout[5] = OUTPUT(!A1L83);
+
+
+--dout[6] is dout[6] at PIN_47
+--operation mode is output
+
+dout[6] = OUTPUT(A1L84);
+
+
+--dout[7] is dout[7] at PIN_48
+--operation mode is output
+
+dout[7] = OUTPUT(GND);
+
+
+
+
+
+--A1L4 is Decoder~125clkctrl at CLKCTRL_G1
+A1L4 = cycloneii_clkctrl(.INCLK[0] = A1L3) WITH (clock_type = "Global Clock");
+
+
+--A1L71 is f1~10clkctrl at CLKCTRL_G0
+A1L71 = cycloneii_clkctrl(.INCLK[0] = A1L70) WITH (clock_type = "Global Clock");
+
+
+--A1L76 is f2~clkctrl at CLKCTRL_G3
+A1L76 = cycloneii_clkctrl(.INCLK[0] = f2) WITH (clock_type = "Global Clock");
+
+

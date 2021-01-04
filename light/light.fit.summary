@@ -1,0 +1,14 @@
+Fitter Status : Successful - Thu May 31 15:44:59 2018
+Quartus II Version : 5.1 Build 176 10/26/2005 SJ Full Version
+Revision Name : light
+Top-level Entity Name : light
+Family : Cyclone II
+Device : EP2C5T144C8
+Timing Models : Preliminary
+Total logic elements : 104 / 4,608 ( 2 % )
+Total registers : 65
+Total pins : 9 / 89 ( 10 % )
+Total virtual pins : 0
+Total memory bits : 0 / 119,808 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 26 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )
