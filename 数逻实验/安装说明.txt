@@ -1,0 +1,27 @@
+                        安装说明
+
+             Protel 99 se 简体中文第六版(含第二版)
+
+第一，运行setup.exe安装 Protel 99 se
+      s/n:Y7ZP-5QQG-ZWSF-K858
+第二, 再安装Protel 99 se service pack 6 简体中文第六版
+      (运行\Protel99SP6\protel99seservicepack6.exe)
+第三，汉化安装(Protel99汉化)
+
+1, 安装中文菜单
+   将附带光盘中的client99se.rcs复制到windows根目录中。
+说明：在复制中文菜单前，先启动一次Protel99se，关闭后将windows根目录
+中的client99se.rcs英文菜单保存起来。
+2, 安装PCB汉字模块
+   将附带光盘中pcb-hz目录的全部文件复制到Design Explorer 99 se根目录中，
+注意检查一下hanzi.lgs和Font.DDB文件的属性，将其只读选项去掉。
+3, 安装国标码、	库
+   将附带光盘中的gb4728.ddb（国标库）复制到Design Explorer 99 se/
+library/SCH目录中，并将其属性中的只读去掉。
+将附带光盘中的Guobiao Template.ddb（国标模板）复制到Design 
+Explorer 99 se 根目录中，并将其属性中的只读去掉。
+          汉化完成.OK!
+
+4, 安装orCAD转换程序（如果需要的话）
+   将附带光盘中orCAD-Protel目录中的全部文件复制到Design Explorer 99 se
+根目录中。
